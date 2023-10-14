@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\István\\Desktop\\kb-main\\kb-main\\kb-main\\KBSzamlalo\\KBSzamlalo\\KBSzamlalo.csproj": {}
+    "C:\\Users\\István\\Desktop\\KBSzamlalo\\KBSzamlalo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\István\\Desktop\\kb-main\\kb-main\\kb-main\\KBSzamlalo\\KBSzamlalo\\KBSzamlalo.csproj": {
+    "C:\\Users\\István\\Desktop\\KBSzamlalo\\KBSzamlalo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\István\\Desktop\\kb-main\\kb-main\\kb-main\\KBSzamlalo\\KBSzamlalo\\KBSzamlalo.csproj",
+        "projectUniqueName": "C:\\Users\\István\\Desktop\\KBSzamlalo\\KBSzamlalo.csproj",
         "projectName": "KBSzamlalo",
-        "projectPath": "C:\\Users\\István\\Desktop\\kb-main\\kb-main\\kb-main\\KBSzamlalo\\KBSzamlalo\\KBSzamlalo.csproj",
+        "projectPath": "C:\\Users\\István\\Desktop\\KBSzamlalo\\KBSzamlalo.csproj",
         "packagesPath": "C:\\Users\\István\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\István\\Desktop\\kb-main\\kb-main\\kb-main\\KBSzamlalo\\KBSzamlalo\\obj\\",
+        "outputPath": "C:\\Users\\István\\Desktop\\KBSzamlalo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

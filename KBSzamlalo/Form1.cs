@@ -9,11 +9,13 @@ namespace KBSzamlalo
             InitializeComponent();
         }
 
+        // Main form closing
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.ExitThread();
         }
 
+        // Pentathlon form open
         private void pentathlonButton_Click_1(object sender, EventArgs e)
         {
             PentathlonForm pForm = new PentathlonForm(true);
@@ -21,6 +23,7 @@ namespace KBSzamlalo
             this.Hide();
         }
 
+        // Half pentathlon form open
         private void halfPentathlonButton_Click_1(object sender, EventArgs e)
         {
             PentathlonForm pForm = new PentathlonForm(false);
@@ -28,6 +31,7 @@ namespace KBSzamlalo
             this.Hide();
         }
 
+        // Settings form open (picture click)
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             SettingsForm pForm = new SettingsForm();
@@ -35,6 +39,7 @@ namespace KBSzamlalo
             this.Hide();
         }
 
+        // Pentathlon form open (text click)
         private void settingsLabel_Click(object sender, EventArgs e)
         {
             SettingsForm pForm = new SettingsForm();
@@ -42,6 +47,7 @@ namespace KBSzamlalo
             this.Hide();
         }
 
+        // Spint 3' form open
         private void sprint3Button_Click(object sender, EventArgs e)
         {
             SprintForm sForm = new SprintForm(3);
@@ -49,6 +55,7 @@ namespace KBSzamlalo
             this.Hide();
         }
 
+        // Spint 5' form open
         private void sprint5Button_Click(object sender, EventArgs e)
         {
             SprintForm sForm = new SprintForm(5);
@@ -56,6 +63,7 @@ namespace KBSzamlalo
             this.Hide();
         }
 
+        // Spint 10' form open
         private void sprint10Button_Click(object sender, EventArgs e)
         {
             SprintForm sForm = new SprintForm(10);
@@ -63,6 +71,7 @@ namespace KBSzamlalo
             this.Hide();
         }
 
+        // Spint 12' form open
         private void sprint12Button_Click(object sender, EventArgs e)
         {
             SprintForm sForm = new SprintForm(12);
@@ -70,6 +79,7 @@ namespace KBSzamlalo
             this.Hide();
         }
 
+        // Spint 30' form open
         private void sprint30Button_Click(object sender, EventArgs e)
         {
             SprintForm sForm = new SprintForm(30);
@@ -77,6 +87,7 @@ namespace KBSzamlalo
             this.Hide();
         }
 
+        // Spint 60' form open
         private void sprint60Button_Click(object sender, EventArgs e)
         {
             SprintForm sForm = new SprintForm(60);
@@ -84,6 +95,7 @@ namespace KBSzamlalo
             this.Hide();
         }
 
+        // Custom plan form open
         private void customButton_Click(object sender, EventArgs e)
         {
             CustomForm cForm = new CustomForm();

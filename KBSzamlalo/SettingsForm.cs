@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace KBSzamlalo
+﻿namespace KBSzamlalo
 {
     public partial class SettingsForm : Form
     {
@@ -20,6 +9,7 @@ namespace KBSzamlalo
         {
             InitializeComponent();
 
+            // Turn on/off the sound
             if (Settings.SoundOn)
             {
                 pictureBox1.Image = KBSzamlalo.Properties.Resources.onSwitch;
@@ -29,6 +19,7 @@ namespace KBSzamlalo
                 pictureBox1.Image = KBSzamlalo.Properties.Resources.offSwitch;
             }
 
+            // Switch between stopwatch and countdown
             if (Settings.StopWatch)
             {
                 timingPictureBox.Image = KBSzamlalo.Properties.Resources.onSwitch;
@@ -39,6 +30,7 @@ namespace KBSzamlalo
             }
         }
 
+        // Sound switch button
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (!Settings.SoundOn)
@@ -53,6 +45,7 @@ namespace KBSzamlalo
             }
         }
 
+        // Timing switch button
         private void timingPictureBox_Click(object sender, EventArgs e)
         {
             if (!Settings.StopWatch)
@@ -67,12 +60,14 @@ namespace KBSzamlalo
             }
         }
 
+        // Closes the form, loads the main form
         private void SettingsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Form1 form = new Form1();
             form.Show();
         }
 
+        // Shortcut to close the form without saving
         private void SettingsForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Modifiers == Keys.Control && e.KeyCode == Keys.C)

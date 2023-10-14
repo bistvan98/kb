@@ -64,7 +64,7 @@
             countLabel.AutoSize = true;
             countLabel.Font = new Font("Segoe UI", 200F, FontStyle.Regular, GraphicsUnit.Point);
             countLabel.ForeColor = Color.White;
-            countLabel.Location = new Point(504, 31);
+            countLabel.Location = new Point(623, 81);
             countLabel.Name = "countLabel";
             countLabel.Size = new Size(293, 355);
             countLabel.TabIndex = 2;
@@ -75,7 +75,7 @@
             timeLabel.AutoSize = true;
             timeLabel.Font = new Font("Segoe UI", 120F, FontStyle.Regular, GraphicsUnit.Point);
             timeLabel.ForeColor = Color.White;
-            timeLabel.Location = new Point(416, 386);
+            timeLabel.Location = new Point(535, 398);
             timeLabel.Name = "timeLabel";
             timeLabel.Size = new Size(468, 212);
             timeLabel.TabIndex = 3;
@@ -89,7 +89,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.play_button2;
-            pictureBox1.Location = new Point(436, 111);
+            pictureBox1.Location = new Point(535, 100);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(361, 367);
             pictureBox1.TabIndex = 4;
@@ -117,7 +117,7 @@
             restTextLabel.AutoSize = true;
             restTextLabel.Font = new Font("Segoe UI", 80F, FontStyle.Regular, GraphicsUnit.Point);
             restTextLabel.ForeColor = Color.Gold;
-            restTextLabel.Location = new Point(533, 442);
+            restTextLabel.Location = new Point(653, 436);
             restTextLabel.Name = "restTextLabel";
             restTextLabel.Size = new Size(234, 142);
             restTextLabel.TabIndex = 6;

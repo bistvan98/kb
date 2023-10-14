@@ -13,7 +13,6 @@ namespace KBSzamlalo
         private int DivideNumber;
         private bool FirstCountdown;
         private bool IsRest;
-
         int[] scores = new int[5];
         string[] exerciseName = new string[] { "clean", "clean and press", "jerk", "half snatch", "push press" };
 
@@ -78,6 +77,16 @@ namespace KBSzamlalo
                                 }
                                 break;
                         }
+
+                        if (Convert.ToInt32(countLabel.Text) >= 100)
+                        {
+                            countLabel.Location = new Point(497, 81);
+                        }
+                        else if (Convert.ToInt32(countLabel.Text) >= 10)
+                        {
+                            countLabel.Location = new Point(535, 81);
+                        }
+
                         break;
 
                     case Keys.Space:
@@ -118,23 +127,44 @@ namespace KBSzamlalo
                                 }
                                 break;
                         }
+
+                        if (Convert.ToInt32(countLabel.Text) >= 100)
+                        {
+                            countLabel.Location = new Point(497, 81);
+                        }
+                        else if (Convert.ToInt32(countLabel.Text) >= 10)
+                        {
+                            countLabel.Location = new Point(535, 81);
+                        }
+
                         break;
                     case Keys.Down:
                         if (countLabel.Text != "0")
                         {
                             countLabel.Text = Convert.ToString(Convert.ToInt32(countLabel.Text) - 1);
                         }
+
+                        if (Convert.ToInt32(countLabel.Text) < 10)
+                        {
+                            countLabel.Location = new Point(623, 81); 
+                        }
+                        else if (Convert.ToInt32(countLabel.Text) < 100)
+                        {
+                            countLabel.Location = new Point(535, 81);
+                        }
+
                         break;
                 }
             }
         }
 
+        // Starts the pentathlon
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             pictureBox1.Hide();
             countLabel.Show();
             timeLabel.ForeColor = Color.Yellow;
-            timeLabel.Text = "0:05";
+            timeLabel.Text = "00:05";
             timeLabel.Show();
             exerciseTimer.Start();
         }
@@ -154,7 +184,7 @@ namespace KBSzamlalo
                         TotalSeconds = TotalSeconds - 1;
                         if (Exercise)
                         {
-                            timeLabel.Text = "0:0" + TotalSeconds.ToString();
+                            timeLabel.Text = "00:0" + TotalSeconds.ToString();
                         }
                         else
                         {
@@ -180,20 +210,26 @@ namespace KBSzamlalo
                                 mins = TotalSeconds / 60;
                                 secs = TotalSeconds - (mins * 60);
                                 secsString = secs.ToString();
+                                string minsString = mins.ToString();
 
                                 if (secs < 10)
                                 {
                                     secsString = "0" + secs;
                                 }
 
+                                if (mins < 10)
+                                {
+                                    minsString = "0" + mins;
+                                }
+
                                 switch (IsRest)
                                 {
                                     case true:
-                                        restTimeLabel.Text = mins.ToString() + ":" + secsString;
+                                        restTimeLabel.Text = minsString + ":" + secsString;
                                         break;
 
                                     case false:
-                                        timeLabel.Text = mins.ToString() + ":" + secsString;
+                                        timeLabel.Text = minsString + ":" + secsString;
                                         break;
                                 }
                             }
@@ -219,20 +255,26 @@ namespace KBSzamlalo
                                 mins = TotalSeconds / 60;
                                 secs = TotalSeconds - (mins * 60);
                                 secsString = secs.ToString();
+                                string minsString = mins.ToString();
 
                                 if (secs < 10)
                                 {
                                     secsString = "0" + secs;
                                 }
 
+                                if (mins < 10)
+                                {
+                                    minsString = "0" + mins;
+                                }
+
                                 switch (IsRest)
                                 {
                                     case true:
-                                        restTimeLabel.Text = mins.ToString() + ":" + secsString;
+                                        restTimeLabel.Text = minsString + ":" + secsString;
                                         break;
 
                                     case false:
-                                        timeLabel.Text = mins.ToString() + ":" + secsString;
+                                        timeLabel.Text = minsString + ":" + secsString;
                                         break;
                                 }
                             }
@@ -255,13 +297,14 @@ namespace KBSzamlalo
             }
         }
 
+        // Starts an exercise
         private void StartExercise()
         {
             EndRest();
 
             exerciseLabel.Text = exerciseName[ExerciseNumber];
             exerciseLabel.Show();
-            timeLabel.Text = "0:00";
+            timeLabel.Text = "00:00";
             timeLabel.Show();
             countLabel.Show();
             timeLabel.ForeColor = Color.White;
@@ -273,13 +316,13 @@ namespace KBSzamlalo
                 if (!Settings.StopWatch)
                 {
                     TotalSeconds = 360;
-                    timeLabel.Text = "6:00";
+                    timeLabel.Text = "06:00";
                 }
                 else
                 {
                     TotalSeconds = 0;
                     MaxSeconds = 360;
-                    timeLabel.Text = "0:00";
+                    timeLabel.Text = "00:00";
                 }
             }
             else
@@ -287,13 +330,13 @@ namespace KBSzamlalo
                 if (!Settings.StopWatch)
                 {
                     TotalSeconds = 180;
-                    timeLabel.Text = "3:00";
+                    timeLabel.Text = "03:00";
                 }
                 else
                 {
                     TotalSeconds = 0;
                     MaxSeconds = 180;
-                    timeLabel.Text = "0:00";
+                    timeLabel.Text = "00:00";
                 }
             }
 
@@ -305,6 +348,7 @@ namespace KBSzamlalo
             exerciseTimer.Start();
         }
 
+        // Ends the exercise
         private void ExerciseEnd()
         {
             scores[ExerciseNumber] = Convert.ToInt32(countLabel.Text);
@@ -316,6 +360,7 @@ namespace KBSzamlalo
             timeLabel.Hide();
         }
 
+        // Starts the resting phase
         private void StartRest()
         {
             ExerciseEnd();
@@ -336,13 +381,13 @@ namespace KBSzamlalo
                     if (!Settings.StopWatch)
                     {
                         TotalSeconds = 300;
-                        restTimeLabel.Text = "5:00";
+                        restTimeLabel.Text = "05:00";
                     }
                     else
                     {
                         TotalSeconds = 0;
                         MaxSeconds = 300;
-                        restTimeLabel.Text = "0:00";
+                        restTimeLabel.Text = "00:00";
                     }
                 }
                 else
@@ -350,13 +395,13 @@ namespace KBSzamlalo
                     if (!Settings.StopWatch)
                     {
                         TotalSeconds = 120;
-                        restTimeLabel.Text = "2:00";
+                        restTimeLabel.Text = "02:00";
                     }
                     else
                     {
                         TotalSeconds = 0;
                         MaxSeconds = 120;
-                        restTimeLabel.Text = "0:00";
+                        restTimeLabel.Text = "00:00";
                     }
                 }
 
@@ -364,6 +409,7 @@ namespace KBSzamlalo
             }
         }
 
+        // Rest ending
         private void EndRest()
         {
             restTextLabel.Hide();
@@ -371,6 +417,7 @@ namespace KBSzamlalo
             exerciseTimer.Stop();
         }
 
+        // Finishing the whole exercise
         private void FinishExercise()
         {
             timeLabel.Hide();
@@ -393,6 +440,7 @@ namespace KBSzamlalo
             pentathlonCloseButton.Show();
         }
 
+        // Repeat the pentathlon
         private void pentathlonNewButton_Click(object sender, EventArgs e)
         {
             if (IsFull)
@@ -406,9 +454,10 @@ namespace KBSzamlalo
                 pForm.Show();
             }
 
-            this.Close();
+            this.Hide();
         }
 
+        // Loads the default page
         private void LoadDefaultPage(bool IsFull)
         {
             if (IsFull)
@@ -435,6 +484,7 @@ namespace KBSzamlalo
             restTimeLabel.Hide();
             restTextLabel.Hide();
             exerciseTimer.Stop();
+            restTimeLabel.Location = new Point(535, 170);
 
             pentathlonCloseButton.Hide();
             pentathlonNewButton.Hide();
@@ -451,22 +501,22 @@ namespace KBSzamlalo
             Array.Clear(scores, 0, scores.Length);
         }
 
+        // Close the form with a button
         private void pentathlonCloseButton_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            form.Show();
-            this.Close();
+            this.Hide();
         }
 
+        // Closes the form, loads the main form
         private void PentathlonForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            /*if (ForceClose)
-            {
-                Form1 form = new Form1();
-                form.Show();
-            } */
+            Form1 f = new Form1();
+            f.Show();
+
+            this.Hide();
         }
 
+        // Plays the whistle sound
         private void PlaySound()
         {
             SoundPlayer simpleSound = new SoundPlayer("whistle.wav");

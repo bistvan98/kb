@@ -1,4 +1,5 @@
-﻿using System.Media;
+﻿using System.Diagnostics;
+using System.Media;
 
 namespace KBSzamlalo
 {
@@ -9,6 +10,7 @@ namespace KBSzamlalo
         bool FirstCountdown;
         int MaxSeconds;
         bool CanUseKey;
+
         public SprintForm(int type)
         {
             InitializeComponent();
@@ -19,16 +21,18 @@ namespace KBSzamlalo
             LoadDefault(type);
         }
 
+        // Starts the sprint
         private void sprintPictureBox_Click(object sender, EventArgs e)
         {
             sprintPictureBox.Hide();
             sprintCountLabel.Show();
             sprintTimeLabel.ForeColor = Color.Yellow;
-            sprintTimeLabel.Text = "0:05";
+            sprintTimeLabel.Text = "00:05";
             sprintTimeLabel.Show();
             sprintTimer.Start();
         }
 
+        // Loads the default page
         private void LoadDefault(int type)
         {
             sprintNameLabel.Text = "Sprint - " + type + "'";
@@ -36,11 +40,14 @@ namespace KBSzamlalo
             sprintNewButton.Hide();
             sprintCountLabel.Hide();
             sprintTimeLabel.Hide();
+            sprintPictureBox.Show();
+            sprintCountLabel.Text = "0";
             FirstCountdown = true;
             CanUseKey = false;
             TotalSeconds = 5;
         }
 
+        // Starts the sprint
         private void StartExercise(int type)
         {
             CanUseKey = true;
@@ -56,37 +63,37 @@ namespace KBSzamlalo
                         case 3:
                             TotalSeconds = 0;
                             MaxSeconds = 180;
-                            sprintTimeLabel.Text = "0:00";
+                            sprintTimeLabel.Text = "00:00";
                             break;
 
                         case 5:
                             TotalSeconds = 0;
                             MaxSeconds = 300;
-                            sprintTimeLabel.Text = "0:00";
+                            sprintTimeLabel.Text = "00:00";
                             break;
 
                         case 10:
                             TotalSeconds = 0;
                             MaxSeconds = 600;
-                            sprintTimeLabel.Text = "0:00";
+                            sprintTimeLabel.Text = "00:00";
                             break;
 
                         case 12:
                             TotalSeconds = 0;
                             MaxSeconds = 720;
-                            sprintTimeLabel.Text = "0:00";
+                            sprintTimeLabel.Text = "00:00";
                             break;
 
                         case 30:
                             TotalSeconds = 0;
                             MaxSeconds = 1800;
-                            sprintTimeLabel.Text = "0:00";
+                            sprintTimeLabel.Text = "00:00";
                             break;
 
                         case 60:
                             TotalSeconds = 0;
                             MaxSeconds = 3600;
-                            sprintTimeLabel.Text = "0:00";
+                            sprintTimeLabel.Text = "00:00";
                             break;
                     }
                     break;
@@ -96,12 +103,12 @@ namespace KBSzamlalo
                     {
                         case 3:
                             TotalSeconds = 180;
-                            sprintTimeLabel.Text = type + ":00";
+                            sprintTimeLabel.Text = "0" + type + ":00";
                             break;
 
                         case 5:
                             TotalSeconds = 300;
-                            sprintTimeLabel.Text = type + ":00";
+                            sprintTimeLabel.Text = "0" + type + ":00";
                             break;
 
                         case 10:
@@ -127,14 +134,15 @@ namespace KBSzamlalo
                     break;
             }
 
-            if(Settings.SoundOn)
+            if (Settings.SoundOn)
             {
                 PlaySound();
             }
-            
+
             sprintTimer.Start();
         }
 
+        // Finishing the sprint
         private void FinishExercise()
         {
             CanUseKey = false;
@@ -143,6 +151,7 @@ namespace KBSzamlalo
             sprintNewButton.Show();
         }
 
+        // Timer check
         private void sprintTimer_Tick(object sender, EventArgs e)
         {
             int secs;
@@ -156,7 +165,7 @@ namespace KBSzamlalo
                     {
                         TotalSeconds = TotalSeconds - 1;
 
-                        sprintTimeLabel.Text = "0:0" + TotalSeconds.ToString();
+                        sprintTimeLabel.Text = "00:0" + TotalSeconds.ToString();
                     }
 
                     if (TotalSeconds == 0)
@@ -178,13 +187,19 @@ namespace KBSzamlalo
                                 mins = TotalSeconds / 60;
                                 secs = TotalSeconds - (mins * 60);
                                 secsString = secs.ToString();
+                                string minsString = mins.ToString();
 
                                 if (secs < 10)
                                 {
                                     secsString = "0" + secs;
                                 }
 
-                                sprintTimeLabel.Text = mins.ToString() + ":" + secsString;
+                                if (mins < 10)
+                                {
+                                    minsString = "0" + mins;
+                                }
+
+                                sprintTimeLabel.Text = minsString + ":" + secsString;
                             }
                             else
                             {
@@ -200,13 +215,19 @@ namespace KBSzamlalo
                                 mins = TotalSeconds / 60;
                                 secs = TotalSeconds - (mins * 60);
                                 secsString = secs.ToString();
+                                string minsString = mins.ToString();
 
                                 if (secs < 10)
                                 {
                                     secsString = "0" + secs;
                                 }
 
-                                sprintTimeLabel.Text = mins.ToString() + ":" + secsString;
+                                if (mins < 10)
+                                {
+                                    minsString = "0" + mins;
+                                }
+
+                                sprintTimeLabel.Text = minsString + ":" + secsString;
                             }
                             else
                             {
@@ -219,48 +240,90 @@ namespace KBSzamlalo
             }
         }
 
+        // Soundplayer
         private void PlaySound()
         {
             SoundPlayer simpleSound = new SoundPlayer("whistle.wav");
             simpleSound.Play();
         }
 
+        // Run the sprint again
         private void sprintNewButton_Click(object sender, EventArgs e)
         {
-            SprintForm sForm = new SprintForm(SprintType);
-            sForm.Show();
-            this.Close();
+            SprintForm sform = new SprintForm(SprintType);
+            sform.Show();
+
+            this.Hide();
         }
 
+        // Close the form with a button, load the main form
         private void sprintCloseButton_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            form.Show();
             this.Close();
         }
 
+        // Keyboard key reader
         private void SprintForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if(CanUseKey)
+            if (CanUseKey)
             {
-                switch(e.KeyCode)
+                switch (e.KeyCode)
                 {
                     case Keys.Up:
                         sprintCountLabel.Text = Convert.ToString(Convert.ToInt32(sprintCountLabel.Text) + 1);
+
+                        if (Convert.ToInt32(sprintCountLabel.Text) >= 100)
+                        {
+                            sprintCountLabel.Location = new Point(373, 64);
+                        }
+                        else if (Convert.ToInt32(sprintCountLabel.Text) >= 10)
+                        {
+                            sprintCountLabel.Location = new Point(436, 64);
+                        }
+
                         break;
 
                     case Keys.Space:
                         sprintCountLabel.Text = Convert.ToString(Convert.ToInt32(sprintCountLabel.Text) + 1);
+
+                        if (Convert.ToInt32(sprintCountLabel.Text) >= 100)
+                        {
+                            sprintCountLabel.Location = new Point(373, 64);
+                        }
+                        else if (Convert.ToInt32(sprintCountLabel.Text) >= 10)
+                        {
+                            sprintCountLabel.Location = new Point(436, 64);
+                        }
+
                         break;
 
                     case Keys.Down:
-                        if(sprintCountLabel.Text != "0")
+                        if (sprintCountLabel.Text != "0")
                         {
                             sprintCountLabel.Text = Convert.ToString(Convert.ToInt32(sprintCountLabel.Text) - 1);
                         }
+
+                        if (Convert.ToInt32(sprintCountLabel.Text) < 10)
+                        {
+                            sprintCountLabel.Location = new Point(504, 64);
+                        }
+                        else if (Convert.ToInt32(sprintCountLabel.Text) < 100)
+                        {
+                            sprintCountLabel.Location = new Point(436, 64);
+                        }
+
                         break;
                 }
             }
+        }
+
+        // When the form closes the main form will load
+        private void SprintForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Form1 f = new Form1();
+            f.Show();
+
+            this.Hide();
         }
     }
 }

@@ -52,7 +52,7 @@
             pentathlonButton.FlatAppearance.MouseOverBackColor = Color.Black;
             pentathlonButton.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             pentathlonButton.ForeColor = SystemColors.ButtonHighlight;
-            pentathlonButton.Location = new Point(83, 84);
+            pentathlonButton.Location = new Point(85, 85);
             pentathlonButton.Name = "pentathlonButton";
             pentathlonButton.Size = new Size(259, 46);
             pentathlonButton.TabIndex = 1;
@@ -68,7 +68,7 @@
             halfPentathlonButton.FlatAppearance.MouseOverBackColor = Color.Black;
             halfPentathlonButton.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             halfPentathlonButton.ForeColor = SystemColors.ButtonHighlight;
-            halfPentathlonButton.Location = new Point(83, 166);
+            halfPentathlonButton.Location = new Point(85, 175);
             halfPentathlonButton.Name = "halfPentathlonButton";
             halfPentathlonButton.Size = new Size(259, 46);
             halfPentathlonButton.TabIndex = 2;
@@ -90,7 +90,7 @@
             settingsLabel.AutoSize = true;
             settingsLabel.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             settingsLabel.ForeColor = Color.FromArgb(255, 255, 128);
-            settingsLabel.Location = new Point(136, 506);
+            settingsLabel.Location = new Point(145, 560);
             settingsLabel.Name = "settingsLabel";
             settingsLabel.Size = new Size(112, 37);
             settingsLabel.TabIndex = 4;
@@ -100,7 +100,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.settings_picture;
-            pictureBox2.Location = new Point(60, 481);
+            pictureBox2.Location = new Point(69, 535);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(70, 71);
             pictureBox2.TabIndex = 5;
@@ -115,7 +115,7 @@
             sprint3Button.FlatAppearance.MouseOverBackColor = Color.Black;
             sprint3Button.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             sprint3Button.ForeColor = SystemColors.ButtonHighlight;
-            sprint3Button.Location = new Point(83, 247);
+            sprint3Button.Location = new Point(83, 265);
             sprint3Button.Name = "sprint3Button";
             sprint3Button.Size = new Size(259, 46);
             sprint3Button.TabIndex = 6;
@@ -131,7 +131,7 @@
             sprint5Button.FlatAppearance.MouseOverBackColor = Color.Black;
             sprint5Button.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             sprint5Button.ForeColor = SystemColors.ButtonHighlight;
-            sprint5Button.Location = new Point(435, 84);
+            sprint5Button.Location = new Point(435, 85);
             sprint5Button.Name = "sprint5Button";
             sprint5Button.Size = new Size(166, 46);
             sprint5Button.TabIndex = 7;
@@ -147,7 +147,7 @@
             sprint10Button.FlatAppearance.MouseOverBackColor = Color.Black;
             sprint10Button.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             sprint10Button.ForeColor = SystemColors.ButtonHighlight;
-            sprint10Button.Location = new Point(435, 166);
+            sprint10Button.Location = new Point(435, 175);
             sprint10Button.Name = "sprint10Button";
             sprint10Button.Size = new Size(166, 46);
             sprint10Button.TabIndex = 8;
@@ -163,7 +163,7 @@
             sprint12Button.FlatAppearance.MouseOverBackColor = Color.Black;
             sprint12Button.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             sprint12Button.ForeColor = SystemColors.ButtonHighlight;
-            sprint12Button.Location = new Point(435, 247);
+            sprint12Button.Location = new Point(435, 265);
             sprint12Button.Name = "sprint12Button";
             sprint12Button.Size = new Size(166, 46);
             sprint12Button.TabIndex = 9;
@@ -179,7 +179,7 @@
             sprint30Button.FlatAppearance.MouseOverBackColor = Color.Black;
             sprint30Button.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             sprint30Button.ForeColor = SystemColors.ButtonHighlight;
-            sprint30Button.Location = new Point(435, 328);
+            sprint30Button.Location = new Point(435, 355);
             sprint30Button.Name = "sprint30Button";
             sprint30Button.Size = new Size(166, 46);
             sprint30Button.TabIndex = 10;
@@ -195,7 +195,7 @@
             sprint60Button.FlatAppearance.MouseOverBackColor = Color.Black;
             sprint60Button.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             sprint60Button.ForeColor = SystemColors.ButtonHighlight;
-            sprint60Button.Location = new Point(435, 405);
+            sprint60Button.Location = new Point(435, 445);
             sprint60Button.Name = "sprint60Button";
             sprint60Button.Size = new Size(166, 46);
             sprint60Button.TabIndex = 11;
@@ -211,7 +211,7 @@
             customButton.FlatAppearance.MouseOverBackColor = Color.Black;
             customButton.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             customButton.ForeColor = SystemColors.ButtonHighlight;
-            customButton.Location = new Point(83, 405);
+            customButton.Location = new Point(85, 445);
             customButton.Name = "customButton";
             customButton.Size = new Size(259, 46);
             customButton.TabIndex = 12;

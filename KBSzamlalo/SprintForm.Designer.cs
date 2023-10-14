@@ -76,11 +76,12 @@
             sprintCountLabel.AutoSize = true;
             sprintCountLabel.Font = new Font("Segoe UI", 200F, FontStyle.Regular, GraphicsUnit.Point);
             sprintCountLabel.ForeColor = Color.White;
-            sprintCountLabel.Location = new Point(504, 31);
+            sprintCountLabel.Location = new Point(504, 64);
             sprintCountLabel.Name = "sprintCountLabel";
             sprintCountLabel.Size = new Size(293, 355);
             sprintCountLabel.TabIndex = 7;
             sprintCountLabel.Text = "0";
+            sprintCountLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // sprintNewButton
             // 
@@ -128,6 +129,7 @@
             Controls.Add(sprintNameLabel);
             Name = "SprintForm";
             Text = "SprintForm";
+            FormClosing += SprintForm_FormClosing;
             KeyDown += SprintForm_KeyDown;
             ((System.ComponentModel.ISupportInitialize)sprintPictureBox).EndInit();
             ResumeLayout(false);
