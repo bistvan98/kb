@@ -78,6 +78,7 @@
             // 
             // shortcutLabel
             // 
+            shortcutLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             shortcutLabel.AutoSize = true;
             shortcutLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             shortcutLabel.ForeColor = Color.White;
@@ -89,6 +90,7 @@
             // 
             // shortcutLongLabel
             // 
+            shortcutLongLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             shortcutLongLabel.AutoSize = true;
             shortcutLongLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             shortcutLongLabel.ForeColor = Color.White;
@@ -180,7 +182,7 @@
             Controls.Add(soundLabel);
             Controls.Add(settingsNameLabel);
             Name = "SettingsForm";
-            Text = "SettingsForm";
+            Text = "s";
             FormClosing += SettingsForm_FormClosing;
             KeyDown += SettingsForm_KeyDown;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -52,6 +52,7 @@
             // 
             // sprintPictureBox
             // 
+            sprintPictureBox.Anchor = AnchorStyles.None;
             sprintPictureBox.Image = Properties.Resources.play_button2;
             sprintPictureBox.Location = new Point(436, 111);
             sprintPictureBox.Name = "sprintPictureBox";
@@ -62,6 +63,7 @@
             // 
             // sprintTimeLabel
             // 
+            sprintTimeLabel.Anchor = AnchorStyles.Bottom;
             sprintTimeLabel.AutoSize = true;
             sprintTimeLabel.Font = new Font("Segoe UI", 120F, FontStyle.Regular, GraphicsUnit.Point);
             sprintTimeLabel.ForeColor = Color.White;
@@ -73,6 +75,7 @@
             // 
             // sprintCountLabel
             // 
+            sprintCountLabel.Anchor = AnchorStyles.None;
             sprintCountLabel.AutoSize = true;
             sprintCountLabel.Font = new Font("Segoe UI", 200F, FontStyle.Regular, GraphicsUnit.Point);
             sprintCountLabel.ForeColor = Color.White;
@@ -85,6 +88,7 @@
             // 
             // sprintNewButton
             // 
+            sprintNewButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             sprintNewButton.BackColor = SystemColors.ActiveCaptionText;
             sprintNewButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             sprintNewButton.ForeColor = SystemColors.ButtonHighlight;
@@ -98,6 +102,7 @@
             // 
             // sprintCloseButton
             // 
+            sprintCloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             sprintCloseButton.BackColor = SystemColors.ActiveCaptionText;
             sprintCloseButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             sprintCloseButton.ForeColor = SystemColors.ButtonHighlight;

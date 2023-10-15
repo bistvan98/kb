@@ -17,6 +17,7 @@ namespace KBSzamlalo
         private List<int> scores = new List<int>();
         private int IterationNumber;
         private bool IsResultListing;
+        private Point defPoint = new Point();
 
         public CustomRunForm()
         {
@@ -52,6 +53,7 @@ namespace KBSzamlalo
             customRestTimeLabel.Hide();
             customTimeLabel.Hide();
             customRunLabel.Text = Settings.Lines[Settings.Lines.Count - 1];
+
 
             string timeMin = Settings.Lines[Settings.Lines.Count - 3];
             string timeSec = Settings.Lines[Settings.Lines.Count - 2];
@@ -221,6 +223,7 @@ namespace KBSzamlalo
         // Closes the form return to the custom creater form
         private void closeLabel_Click(object sender, EventArgs e)
         {
+            timer1.Stop();
             Settings.LineCounter = 0;
             Settings.Lines.Clear();
             CustomForm cf = new CustomForm();
@@ -238,13 +241,16 @@ namespace KBSzamlalo
                     case Keys.Up:
                         customCountLabel.Text = Convert.ToString(Convert.ToInt32(customCountLabel.Text) + 1);
 
-                        if (Convert.ToInt32(customCountLabel.Text) >= 100)
+                        if (Convert.ToInt32(customCountLabel.Text) >= 100 && Convert.ToInt32(customCountLabel.Text) - 1 < 100)
                         {
-                            customCountLabel.Location = new Point(463, 65);
+                            Point p = new Point(customCountLabel.Location.X - 70, customCountLabel.Location.Y);
+                            customCountLabel.Location = p;
                         }
-                        else if (Convert.ToInt32(customCountLabel.Text) >= 10)
+                        else if (Convert.ToInt32(customCountLabel.Text) >= 10 && Convert.ToInt32(customCountLabel.Text) - 1 < 10)
                         {
-                            customCountLabel.Location = new Point(513, 65);
+                            defPoint = new Point(customCountLabel.Location.X, customCountLabel.Location.Y);
+                            Point p = new Point(customCountLabel.Location.X - 70, customCountLabel.Location.Y);
+                            customCountLabel.Location = p;
                         }
 
                         break;
@@ -252,13 +258,16 @@ namespace KBSzamlalo
                     case Keys.Space:
                         customCountLabel.Text = Convert.ToString(Convert.ToInt32(customCountLabel.Text) + 1);
 
-                        if (Convert.ToInt32(customCountLabel.Text) >= 100)
+                        if (Convert.ToInt32(customCountLabel.Text) >= 100 && Convert.ToInt32(customCountLabel.Text) - 1 < 100)
                         {
-                            customCountLabel.Location = new Point(463, 65);
+                            Point p = new Point(customCountLabel.Location.X - 70, customCountLabel.Location.Y);
+                            customCountLabel.Location = p;
                         }
-                        else if (Convert.ToInt32(customCountLabel.Text) >= 10)
+                        else if (Convert.ToInt32(customCountLabel.Text) >= 10 && Convert.ToInt32(customCountLabel.Text) - 1 < 10)
                         {
-                            customCountLabel.Location = new Point(513, 65);
+                            defPoint = new Point(customCountLabel.Location.X, customCountLabel.Location.Y);
+                            Point p = new Point(customCountLabel.Location.X - 70, customCountLabel.Location.Y);
+                            customCountLabel.Location = p;
                         }
 
                         break;
@@ -269,13 +278,15 @@ namespace KBSzamlalo
                             customCountLabel.Text = Convert.ToString(Convert.ToInt32(customCountLabel.Text) - 1);
                         }
 
-                        if (Convert.ToInt32(customCountLabel.Text) < 10)
+                        if (Convert.ToInt32(customCountLabel.Text) < 10 && Convert.ToInt32(customCountLabel.Text) + 1 > 10)
                         {
-                            customCountLabel.Location = new Point(577, 65);
+                            Point p = new Point(customCountLabel.Location.X + 70, customCountLabel.Location.Y);
+                            customCountLabel.Location = p;
                         }
-                        else if (Convert.ToInt32(customCountLabel.Text) < 100)
+                        else if (Convert.ToInt32(customCountLabel.Text) < 100 && Convert.ToInt32(customCountLabel.Text) + 1 > 100)
                         {
-                            customCountLabel.Location = new Point(513, 65);
+                            Point p = new Point(customCountLabel.Location.X + 70, customCountLabel.Location.Y);
+                            customCountLabel.Location = p;
                         }
 
                         break;
@@ -417,7 +428,14 @@ namespace KBSzamlalo
 
             if (Settings.SoundOn)
             {
-                PlaySound();
+                try
+                {
+                    PlaySound();
+                }
+                catch
+                {
+
+                }
             }
 
             timer1.Start();
@@ -477,12 +495,19 @@ namespace KBSzamlalo
 
             if (Settings.SoundOn)
             {
-                PlaySound();
+                try
+                {
+                    PlaySound();
+                }
+                catch
+                {
+
+                }
             }
 
             ChangeColor();
 
-            customCountLabel.Location = new Point(513, 65);
+            customCountLabel.Location = defPoint;
 
             timer1.Start();
         }
@@ -494,12 +519,13 @@ namespace KBSzamlalo
             {
                 scores.Add(Convert.ToInt32(customCountLabel.Text));
             }
-
+            customCountLabel.Location = defPoint;
             CanPressKey = false;
             RoundNumber++;
             customCountLabel.Hide();
             customCountLabel.Text = "0";
             customTimeLabel.Hide();
+            customCountLabel.Location = defPoint;
         }
 
         private void FinishExercise()
@@ -561,7 +587,7 @@ namespace KBSzamlalo
 
                 ChangeColor();
 
-                customCountLabel.Location = new Point(513, 65);
+                customCountLabel.Location = defPoint;
 
                 timer1.Start();
             }
@@ -608,7 +634,14 @@ namespace KBSzamlalo
 
                 if (Settings.SoundOn)
                 {
-                    PlaySound();
+                    try
+                    {
+                        PlaySound();
+                    }
+                    catch
+                    {
+
+                    }
                 }
 
                 ChangeColor();
@@ -1000,7 +1033,7 @@ namespace KBSzamlalo
                                         secsString = "0" + secs;
                                     }
 
-                                    if(mins < 10)
+                                    if (mins < 10)
                                     {
                                         minsString = "0" + mins;
                                     }
@@ -1026,6 +1059,8 @@ namespace KBSzamlalo
         // When the form closes it will open the custom form creater form
         private void CustomRunForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Settings.Lines.Clear();
+
             CustomForm cf = new CustomForm();
             cf.Show();
 
@@ -1035,8 +1070,15 @@ namespace KBSzamlalo
         // Plays the whistle sound
         private void PlaySound()
         {
-            SoundPlayer simpleSound = new SoundPlayer("whistle.wav");
-            simpleSound.Play();
+            try
+            {
+                SoundPlayer simpleSound = new SoundPlayer("whistle.wav");
+                simpleSound.Play();
+            }
+            catch
+            {
+
+            }
         }
 
         // Changes the line colors to follow the current line

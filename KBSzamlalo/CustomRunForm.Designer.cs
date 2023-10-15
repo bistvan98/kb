@@ -68,6 +68,7 @@
             // 
             // customRunPicBox
             // 
+            customRunPicBox.Anchor = AnchorStyles.None;
             customRunPicBox.Image = Properties.Resources.play_button2;
             customRunPicBox.Location = new Point(533, 80);
             customRunPicBox.Name = "customRunPicBox";
@@ -79,29 +80,31 @@
             // customRunLabel
             // 
             customRunLabel.AutoSize = true;
-            customRunLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            customRunLabel.Font = new Font("Segoe UI", 28F, FontStyle.Regular, GraphicsUnit.Point);
             customRunLabel.ForeColor = Color.Red;
-            customRunLabel.Location = new Point(67, 49);
+            customRunLabel.Location = new Point(42, 26);
             customRunLabel.Name = "customRunLabel";
-            customRunLabel.Size = new Size(96, 32);
+            customRunLabel.Size = new Size(152, 51);
             customRunLabel.TabIndex = 77;
             customRunLabel.Text = "Custom";
             // 
             // roundsLabel
             // 
+            roundsLabel.Anchor = AnchorStyles.Left;
             roundsLabel.AutoSize = true;
             roundsLabel.BorderStyle = BorderStyle.FixedSingle;
-            roundsLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            roundsLabel.Font = new Font("Segoe UI", 26F, FontStyle.Regular, GraphicsUnit.Point);
             roundsLabel.ForeColor = Color.White;
-            roundsLabel.Location = new Point(67, 132);
+            roundsLabel.Location = new Point(42, 115);
             roundsLabel.Name = "roundsLabel";
-            roundsLabel.Size = new Size(100, 34);
+            roundsLabel.Size = new Size(147, 49);
             roundsLabel.TabIndex = 78;
             roundsLabel.Text = "Rounds:";
             roundsLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // typeLabel4
             // 
+            typeLabel4.Anchor = AnchorStyles.Left;
             typeLabel4.AutoSize = true;
             typeLabel4.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             typeLabel4.ForeColor = Color.White;
@@ -113,6 +116,7 @@
             // 
             // typeLabel3
             // 
+            typeLabel3.Anchor = AnchorStyles.Left;
             typeLabel3.AutoSize = true;
             typeLabel3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             typeLabel3.ForeColor = Color.White;
@@ -124,6 +128,7 @@
             // 
             // typeLabel2
             // 
+            typeLabel2.Anchor = AnchorStyles.Left;
             typeLabel2.AutoSize = true;
             typeLabel2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             typeLabel2.ForeColor = Color.White;
@@ -135,6 +140,7 @@
             // 
             // typeLabel1
             // 
+            typeLabel1.Anchor = AnchorStyles.Left;
             typeLabel1.AutoSize = true;
             typeLabel1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             typeLabel1.ForeColor = Color.White;
@@ -146,6 +152,7 @@
             // 
             // time4Label
             // 
+            time4Label.Anchor = AnchorStyles.Left;
             time4Label.AutoSize = true;
             time4Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             time4Label.ForeColor = Color.White;
@@ -157,6 +164,7 @@
             // 
             // time3Label
             // 
+            time3Label.Anchor = AnchorStyles.Left;
             time3Label.AutoSize = true;
             time3Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             time3Label.ForeColor = Color.White;
@@ -168,6 +176,7 @@
             // 
             // time2Label
             // 
+            time2Label.Anchor = AnchorStyles.Left;
             time2Label.AutoSize = true;
             time2Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             time2Label.ForeColor = Color.White;
@@ -179,6 +188,7 @@
             // 
             // time1Label
             // 
+            time1Label.Anchor = AnchorStyles.Left;
             time1Label.AutoSize = true;
             time1Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             time1Label.ForeColor = Color.White;
@@ -190,6 +200,7 @@
             // 
             // typeLabel6
             // 
+            typeLabel6.Anchor = AnchorStyles.Left;
             typeLabel6.AutoSize = true;
             typeLabel6.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             typeLabel6.ForeColor = Color.White;
@@ -201,6 +212,7 @@
             // 
             // typeLabel5
             // 
+            typeLabel5.Anchor = AnchorStyles.Left;
             typeLabel5.AutoSize = true;
             typeLabel5.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             typeLabel5.ForeColor = Color.White;
@@ -212,6 +224,7 @@
             // 
             // time6Label
             // 
+            time6Label.Anchor = AnchorStyles.Left;
             time6Label.AutoSize = true;
             time6Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             time6Label.ForeColor = Color.White;
@@ -223,6 +236,7 @@
             // 
             // time5Label
             // 
+            time5Label.Anchor = AnchorStyles.Left;
             time5Label.AutoSize = true;
             time5Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             time5Label.ForeColor = Color.White;
@@ -234,6 +248,7 @@
             // 
             // id4Label
             // 
+            id4Label.Anchor = AnchorStyles.Left;
             id4Label.AutoSize = true;
             id4Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             id4Label.ForeColor = Color.White;
@@ -245,6 +260,7 @@
             // 
             // id3Label
             // 
+            id3Label.Anchor = AnchorStyles.Left;
             id3Label.AutoSize = true;
             id3Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             id3Label.ForeColor = Color.White;
@@ -256,6 +272,7 @@
             // 
             // id2Label
             // 
+            id2Label.Anchor = AnchorStyles.Left;
             id2Label.AutoSize = true;
             id2Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             id2Label.ForeColor = Color.White;
@@ -267,6 +284,7 @@
             // 
             // id1Label
             // 
+            id1Label.Anchor = AnchorStyles.Left;
             id1Label.AutoSize = true;
             id1Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             id1Label.ForeColor = Color.White;
@@ -278,6 +296,7 @@
             // 
             // id6Label
             // 
+            id6Label.Anchor = AnchorStyles.Left;
             id6Label.AutoSize = true;
             id6Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             id6Label.ForeColor = Color.White;
@@ -289,6 +308,7 @@
             // 
             // id5Label
             // 
+            id5Label.Anchor = AnchorStyles.Left;
             id5Label.AutoSize = true;
             id5Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             id5Label.ForeColor = Color.White;
@@ -300,6 +320,7 @@
             // 
             // customRestTextLabel
             // 
+            customRestTextLabel.Anchor = AnchorStyles.None;
             customRestTextLabel.AutoSize = true;
             customRestTextLabel.Font = new Font("Segoe UI", 80F, FontStyle.Regular, GraphicsUnit.Point);
             customRestTextLabel.ForeColor = Color.Gold;
@@ -311,6 +332,7 @@
             // 
             // customTimeLabel
             // 
+            customTimeLabel.Anchor = AnchorStyles.None;
             customTimeLabel.AutoSize = true;
             customTimeLabel.Font = new Font("Segoe UI", 120F, FontStyle.Regular, GraphicsUnit.Point);
             customTimeLabel.ForeColor = Color.White;
@@ -322,6 +344,7 @@
             // 
             // customCountLabel
             // 
+            customCountLabel.Anchor = AnchorStyles.None;
             customCountLabel.AutoSize = true;
             customCountLabel.Font = new Font("Segoe UI", 200F, FontStyle.Regular, GraphicsUnit.Point);
             customCountLabel.ForeColor = Color.White;
@@ -333,6 +356,7 @@
             // 
             // customRestTimeLabel
             // 
+            customRestTimeLabel.Anchor = AnchorStyles.None;
             customRestTimeLabel.AutoSize = true;
             customRestTimeLabel.Font = new Font("Segoe UI", 120F, FontStyle.Regular, GraphicsUnit.Point);
             customRestTimeLabel.ForeColor = Color.Red;
@@ -350,28 +374,31 @@
             // 
             // roundCounterTextLabel
             // 
+            roundCounterTextLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             roundCounterTextLabel.AutoSize = true;
-            roundCounterTextLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            roundCounterTextLabel.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
             roundCounterTextLabel.ForeColor = Color.Gold;
-            roundCounterTextLabel.Location = new Point(153, 511);
+            roundCounterTextLabel.Location = new Point(263, 508);
             roundCounterTextLabel.Name = "roundCounterTextLabel";
-            roundCounterTextLabel.Size = new Size(83, 32);
+            roundCounterTextLabel.Size = new Size(117, 46);
             roundCounterTextLabel.TabIndex = 102;
             roundCounterTextLabel.Text = "Round";
             // 
             // roundCountLabel
             // 
+            roundCountLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             roundCountLabel.AutoSize = true;
-            roundCountLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            roundCountLabel.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
             roundCountLabel.ForeColor = Color.Gold;
-            roundCountLabel.Location = new Point(170, 569);
+            roundCountLabel.Location = new Point(286, 564);
             roundCountLabel.Name = "roundCountLabel";
-            roundCountLabel.Size = new Size(49, 32);
+            roundCountLabel.Size = new Size(69, 46);
             roundCountLabel.TabIndex = 103;
             roundCountLabel.Text = "1/8";
             // 
             // customMoveListUp
             // 
+            customMoveListUp.Anchor = AnchorStyles.Left;
             customMoveListUp.BorderStyle = BorderStyle.FixedSingle;
             customMoveListUp.Image = Properties.Resources.upArrow;
             customMoveListUp.Location = new Point(259, 197);
@@ -383,6 +410,7 @@
             // 
             // customMoveListDown
             // 
+            customMoveListDown.Anchor = AnchorStyles.Left;
             customMoveListDown.BorderStyle = BorderStyle.FixedSingle;
             customMoveListDown.Image = Properties.Resources.downArrow;
             customMoveListDown.Location = new Point(259, 447);
@@ -394,24 +422,26 @@
             // 
             // closeLabel
             // 
+            closeLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             closeLabel.AutoSize = true;
-            closeLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            closeLabel.Font = new Font("Segoe UI", 26F, FontStyle.Regular, GraphicsUnit.Point);
             closeLabel.ForeColor = Color.White;
-            closeLabel.Location = new Point(67, 543);
+            closeLabel.Location = new Point(42, 528);
             closeLabel.Name = "closeLabel";
-            closeLabel.Size = new Size(72, 32);
+            closeLabel.Size = new Size(104, 47);
             closeLabel.TabIndex = 79;
             closeLabel.Text = "Close";
             closeLabel.Click += closeLabel_Click;
             // 
             // customNewLabel
             // 
+            customNewLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             customNewLabel.AutoSize = true;
-            customNewLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            customNewLabel.Font = new Font("Segoe UI", 26F, FontStyle.Regular, GraphicsUnit.Point);
             customNewLabel.ForeColor = Color.White;
-            customNewLabel.Location = new Point(1082, 543);
+            customNewLabel.Location = new Point(1087, 528);
             customNewLabel.Name = "customNewLabel";
-            customNewLabel.Size = new Size(62, 32);
+            customNewLabel.Size = new Size(89, 47);
             customNewLabel.TabIndex = 106;
             customNewLabel.Text = "New";
             customNewLabel.Click += customNewLabel_Click;

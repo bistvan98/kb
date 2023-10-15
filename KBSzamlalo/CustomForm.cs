@@ -165,8 +165,8 @@ namespace KBSzamlalo
                 if (Convert.ToInt32(lb.Text) < Settings.LineCounter)
                 {
                     MoveList(4);
-                    
-                    if(Convert.ToInt32(lb.Text) == Settings.LineCounter)
+
+                    if (Convert.ToInt32(lb.Text) == Settings.LineCounter)
                     {
                         bottomLineLabel.Hide();
                     }
@@ -1520,19 +1520,24 @@ namespace KBSzamlalo
         #region "Save and Load methods"
 
         // Saves the current plan to an xml file
-        private void saveLabel_Click(object sender, EventArgs e)
+        private void saveButton_Click(object sender, EventArgs e)
         {
             if (saveNameTextBox.Text == "" || saveNameTextBox.Text.Trim() == "")
             {
                 MessageBox.Show("Forget to add a name!");
             }
-            else if (roundsTextBox.Text == "" || roundsTextBox.Text.TrimStart(new Char[] { '0' }) == "")
+            else if ((roundsTextBox.Text == "" || roundsTextBox.Text.TrimStart(new Char[] { '0' }) == "") && Settings.InterVall)
             {
                 MessageBox.Show("Fill the Rounds text box!");
             }
-            else if (customHourTextBox.Text == "" || customMinutesTextBox.Text == "")
+            else if (((customHourTextBox.Text == "" || customMinutesTextBox.Text == "") && !Settings.InterVall) ||
+                ((customHourTextBox.Text.TrimStart(new Char[] { '0' }) == "" && customMinutesTextBox.Text.TrimStart(new Char[] { '0' }) == "") && !Settings.InterVall))
             {
                 MessageBox.Show("Fill the time text box!");
+            }
+            else if(FinishedAdding == false)
+            {
+                MessageBox.Show("Finish the adding of a new line, or cancel it before saving!");
             }
             else
             {
@@ -1549,6 +1554,21 @@ namespace KBSzamlalo
                 if (roundsTextBox.Text.StartsWith("0"))
                 {
                     roundsTextBox.Text = roundsTextBox.Text.TrimStart(new Char[] { '0' });
+                }
+
+                if(Settings.InterVall && customHourTextBox.Text == "")
+                {
+                    customHourTextBox.Text = "1";
+                }
+
+                if (Settings.InterVall && customMinutesTextBox.Text == "")
+                {
+                    customMinutesTextBox.Text = "1";
+                }
+
+                if(!Settings.InterVall)
+                {
+                    Settings.Lines.Clear();
                 }
 
                 Settings.Lines.Add(roundsTextBox.Text);
@@ -1778,14 +1798,15 @@ namespace KBSzamlalo
         private void sprintPictureBox_Click(object sender, EventArgs e)
         {
             // If there are no loaded files and there are no added intervall lines
-            if(Settings.Lines.Count == 0 && Settings.LineCounter == 0)
+            if (/*(Settings.Lines.Count == 0 && Settings.LineCounter == 0)*/!Settings.InterVall)
             {
+                Settings.Lines.Clear();
                 //customHourTextBox.Text.TrimStart(new Char[] { '0' }) == "" || customMinutesTextBox.Text.TrimStart(new Char[] { '0' }) == ""
                 if (String.IsNullOrEmpty(customHourTextBox.Text) && String.IsNullOrEmpty(customMinutesTextBox.Text))
                 {
                     MessageBox.Show("Wrong time data!");
                 }
-                else if(customHourTextBox.Text.TrimStart(new Char[] { '0' }) == "" && customMinutesTextBox.Text.TrimStart(new Char[] { '0' }) == "")
+                else if (customHourTextBox.Text.TrimStart(new Char[] { '0' }) == "" && customMinutesTextBox.Text.TrimStart(new Char[] { '0' }) == "")
                 {
                     MessageBox.Show("Wrong time data!");
                 }
@@ -1793,7 +1814,7 @@ namespace KBSzamlalo
                 {
                     Settings.Lines.Add("1");
 
-                    if(customHourTextBox.Text.TrimStart(new Char[] { '0' }) == "")
+                    if (customHourTextBox.Text.TrimStart(new Char[] { '0' }) == "")
                     {
                         Settings.Lines.Add("0");
                     }
@@ -1801,8 +1822,8 @@ namespace KBSzamlalo
                     {
                         Settings.Lines.Add(customHourTextBox.Text);
                     }
-                    
-                    if(customMinutesTextBox.Text.TrimStart(new Char[] { '0' }) == "")
+
+                    if (customMinutesTextBox.Text.TrimStart(new Char[] { '0' }) == "")
                     {
                         Settings.Lines.Add("0");
                     }
@@ -1811,7 +1832,7 @@ namespace KBSzamlalo
                         Settings.Lines.Add(customMinutesTextBox.Text);
                     }
 
-                    if(saveNameTextBox.Text != "" || saveNameTextBox.Text.Trim() != "")
+                    if (saveNameTextBox.Text != "" || saveNameTextBox.Text.Trim() != "")
                     {
                         Settings.Lines.Add(saveNameTextBox.Text);
                     }
@@ -1826,9 +1847,9 @@ namespace KBSzamlalo
                 }
             }
             // If there are no loaded files but there are added intervall lines
-            else if((Settings.Lines.Count - (Settings.LineCounter * 3)) == 0)
+            else if ((Settings.Lines.Count - (Settings.LineCounter * 3)) == 0)
             {
-                if(roundsTextBox.Text == "" || roundsTextBox.Text.TrimStart(new Char[] { '0' }) == "")
+                if (roundsTextBox.Text == "" || roundsTextBox.Text.TrimStart(new Char[] { '0' }) == "")
                 {
                     MessageBox.Show("Missing round data!");
                 }
@@ -1850,10 +1871,10 @@ namespace KBSzamlalo
                     CustomRunForm crf = new CustomRunForm();
                     crf.Show();
                     this.Hide();
-                }               
+                }
             }
             // Loading a file intervall file
-            else if(Settings.LineCounter != 0)
+            else if (Settings.LineCounter != 0)
             {
                 if (((Settings.Lines.Count - 4) / Settings.LineCounter) == 3)
                 {
@@ -1875,7 +1896,7 @@ namespace KBSzamlalo
                 }
             }
             // Loading a non intervall file
-            else if(Settings.Lines.Count == 4 && Settings.LineCounter == 0)
+            else if (Settings.Lines.Count == 4 && Settings.LineCounter == 0)
             {
                 if (Settings.Lines[Settings.Lines.Count - 4] != roundsTextBox.Text)
                 {
@@ -1893,6 +1914,6 @@ namespace KBSzamlalo
                 crf.Show();
                 this.Hide();
             }
-        }   
+        }
     }
 }

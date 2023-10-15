@@ -1,15 +1,17 @@
 ﻿using System.Diagnostics;
 using System.Media;
+using System.Security.Cryptography;
 
 namespace KBSzamlalo
 {
     public partial class SprintForm : Form
     {
-        int SprintType;
-        int TotalSeconds;
-        bool FirstCountdown;
-        int MaxSeconds;
-        bool CanUseKey;
+        private int SprintType;
+        private int TotalSeconds;
+        private bool FirstCountdown;
+        private int MaxSeconds;
+        private bool CanUseKey;
+        private Point defPoint = new Point();
 
         public SprintForm(int type)
         {
@@ -45,6 +47,7 @@ namespace KBSzamlalo
             FirstCountdown = true;
             CanUseKey = false;
             TotalSeconds = 5;
+            sprintTimeLabel.Location = defPoint;
         }
 
         // Starts the sprint
@@ -136,7 +139,14 @@ namespace KBSzamlalo
 
             if (Settings.SoundOn)
             {
-                PlaySound();
+                try
+                {
+                    PlaySound();
+                }
+                catch
+                {
+
+                }
             }
 
             sprintTimer.Start();
@@ -272,13 +282,16 @@ namespace KBSzamlalo
                     case Keys.Up:
                         sprintCountLabel.Text = Convert.ToString(Convert.ToInt32(sprintCountLabel.Text) + 1);
 
-                        if (Convert.ToInt32(sprintCountLabel.Text) >= 100)
+                        if (Convert.ToInt32(sprintCountLabel.Text) >= 100 && Convert.ToInt32(sprintCountLabel.Text) - 1 < 100)
                         {
-                            sprintCountLabel.Location = new Point(373, 64);
+                            Point p = new Point(sprintCountLabel.Location.X - 70, sprintCountLabel.Location.Y);
+                            sprintCountLabel.Location = p;
                         }
-                        else if (Convert.ToInt32(sprintCountLabel.Text) >= 10)
+                        else if (Convert.ToInt32(sprintCountLabel.Text) >= 10 && Convert.ToInt32(sprintCountLabel.Text) - 1 < 10)
                         {
-                            sprintCountLabel.Location = new Point(436, 64);
+                            defPoint = new Point(sprintCountLabel.Location.X, sprintCountLabel.Location.Y);
+                            Point p = new Point(sprintCountLabel.Location.X - 70, sprintCountLabel.Location.Y);
+                            sprintCountLabel.Location = p;
                         }
 
                         break;
@@ -286,13 +299,16 @@ namespace KBSzamlalo
                     case Keys.Space:
                         sprintCountLabel.Text = Convert.ToString(Convert.ToInt32(sprintCountLabel.Text) + 1);
 
-                        if (Convert.ToInt32(sprintCountLabel.Text) >= 100)
+                        if (Convert.ToInt32(sprintCountLabel.Text) >= 100 && Convert.ToInt32(sprintCountLabel.Text) - 1 < 100)
                         {
-                            sprintCountLabel.Location = new Point(373, 64);
+                            Point p = new Point(sprintCountLabel.Location.X - 70, sprintCountLabel.Location.Y);
+                            sprintCountLabel.Location = p;
                         }
-                        else if (Convert.ToInt32(sprintCountLabel.Text) >= 10)
+                        else if (Convert.ToInt32(sprintCountLabel.Text) >= 10 && Convert.ToInt32(sprintCountLabel.Text) - 1 < 10)
                         {
-                            sprintCountLabel.Location = new Point(436, 64);
+                            defPoint = new Point(sprintCountLabel.Location.X, sprintCountLabel.Location.Y);
+                            Point p = new Point(sprintCountLabel.Location.X - 70, sprintCountLabel.Location.Y);
+                            sprintCountLabel.Location = p;
                         }
 
                         break;
@@ -303,13 +319,15 @@ namespace KBSzamlalo
                             sprintCountLabel.Text = Convert.ToString(Convert.ToInt32(sprintCountLabel.Text) - 1);
                         }
 
-                        if (Convert.ToInt32(sprintCountLabel.Text) < 10)
+                        if (Convert.ToInt32(sprintCountLabel.Text) < 10 && Convert.ToInt32(sprintCountLabel.Text) + 1 >= 10)
                         {
-                            sprintCountLabel.Location = new Point(504, 64);
+                            Point p = new Point(sprintCountLabel.Location.X + 70, sprintCountLabel.Location.Y);
+                            sprintCountLabel.Location = p;
                         }
-                        else if (Convert.ToInt32(sprintCountLabel.Text) < 100)
+                        else if (Convert.ToInt32(sprintCountLabel.Text) < 100 && Convert.ToInt32(sprintCountLabel.Text) + 1 >= 100)
                         {
-                            sprintCountLabel.Location = new Point(436, 64);
+                            Point p = new Point(sprintCountLabel.Location.X + 70, sprintCountLabel.Location.Y);
+                            sprintCountLabel.Location = p;
                         }
 
                         break;

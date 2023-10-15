@@ -46,6 +46,7 @@
             // 
             // pentathlonButton
             // 
+            pentathlonButton.Anchor = AnchorStyles.Left;
             pentathlonButton.BackColor = SystemColors.ActiveCaptionText;
             pentathlonButton.FlatAppearance.BorderColor = Color.White;
             pentathlonButton.FlatAppearance.MouseDownBackColor = Color.Gray;
@@ -62,6 +63,7 @@
             // 
             // halfPentathlonButton
             // 
+            halfPentathlonButton.Anchor = AnchorStyles.Left;
             halfPentathlonButton.BackColor = SystemColors.ActiveCaptionText;
             halfPentathlonButton.FlatAppearance.BorderColor = Color.White;
             halfPentathlonButton.FlatAppearance.MouseDownBackColor = Color.Gray;
@@ -78,6 +80,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.logo;
             pictureBox1.Location = new Point(735, 84);
             pictureBox1.Name = "pictureBox1";
@@ -87,6 +90,7 @@
             // 
             // settingsLabel
             // 
+            settingsLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             settingsLabel.AutoSize = true;
             settingsLabel.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             settingsLabel.ForeColor = Color.FromArgb(255, 255, 128);
@@ -99,6 +103,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             pictureBox2.Image = Properties.Resources.settings_picture;
             pictureBox2.Location = new Point(69, 535);
             pictureBox2.Name = "pictureBox2";
@@ -109,6 +114,7 @@
             // 
             // sprint3Button
             // 
+            sprint3Button.Anchor = AnchorStyles.Left;
             sprint3Button.BackColor = SystemColors.ActiveCaptionText;
             sprint3Button.FlatAppearance.BorderColor = Color.White;
             sprint3Button.FlatAppearance.MouseDownBackColor = Color.Gray;
@@ -125,6 +131,7 @@
             // 
             // sprint5Button
             // 
+            sprint5Button.Anchor = AnchorStyles.Left;
             sprint5Button.BackColor = SystemColors.ActiveCaptionText;
             sprint5Button.FlatAppearance.BorderColor = Color.White;
             sprint5Button.FlatAppearance.MouseDownBackColor = Color.Gray;
@@ -141,6 +148,7 @@
             // 
             // sprint10Button
             // 
+            sprint10Button.Anchor = AnchorStyles.Left;
             sprint10Button.BackColor = SystemColors.ActiveCaptionText;
             sprint10Button.FlatAppearance.BorderColor = Color.White;
             sprint10Button.FlatAppearance.MouseDownBackColor = Color.Gray;
@@ -157,6 +165,7 @@
             // 
             // sprint12Button
             // 
+            sprint12Button.Anchor = AnchorStyles.Left;
             sprint12Button.BackColor = SystemColors.ActiveCaptionText;
             sprint12Button.FlatAppearance.BorderColor = Color.White;
             sprint12Button.FlatAppearance.MouseDownBackColor = Color.Gray;
@@ -173,6 +182,7 @@
             // 
             // sprint30Button
             // 
+            sprint30Button.Anchor = AnchorStyles.Left;
             sprint30Button.BackColor = SystemColors.ActiveCaptionText;
             sprint30Button.FlatAppearance.BorderColor = Color.White;
             sprint30Button.FlatAppearance.MouseDownBackColor = Color.Gray;
@@ -189,6 +199,7 @@
             // 
             // sprint60Button
             // 
+            sprint60Button.Anchor = AnchorStyles.Left;
             sprint60Button.BackColor = SystemColors.ActiveCaptionText;
             sprint60Button.FlatAppearance.BorderColor = Color.White;
             sprint60Button.FlatAppearance.MouseDownBackColor = Color.Gray;
@@ -205,6 +216,7 @@
             // 
             // customButton
             // 
+            customButton.Anchor = AnchorStyles.Left;
             customButton.BackColor = SystemColors.ActiveCaptionText;
             customButton.FlatAppearance.BorderColor = Color.White;
             customButton.FlatAppearance.MouseDownBackColor = Color.Gray;

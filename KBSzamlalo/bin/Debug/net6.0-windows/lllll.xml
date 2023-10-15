@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<CustomRound>
+  <Round>
+    <id>1</id>
+    <type>work</type>
+    <length>0:2</length>
+  </Round>
+  <Round>
+    <id>2</id>
+    <type>rest</type>
+    <length>0:2</length>
+  </Round>
+  <Round>
+    <id>3</id>
+    <type>work</type>
+    <length>0:2</length>
+  </Round>
+  <OtherData>
+    <RoundsNumber>2</RoundsNumber>
+    <Min>1</Min>
+    <Sec>1</Sec>
+    <Name>lllll</Name>
+  </OtherData>
+</CustomRound>

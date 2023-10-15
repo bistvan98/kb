@@ -61,6 +61,7 @@
             // 
             // countLabel
             // 
+            countLabel.Anchor = AnchorStyles.None;
             countLabel.AutoSize = true;
             countLabel.Font = new Font("Segoe UI", 200F, FontStyle.Regular, GraphicsUnit.Point);
             countLabel.ForeColor = Color.White;
@@ -72,6 +73,7 @@
             // 
             // timeLabel
             // 
+            timeLabel.Anchor = AnchorStyles.Bottom;
             timeLabel.AutoSize = true;
             timeLabel.Font = new Font("Segoe UI", 120F, FontStyle.Regular, GraphicsUnit.Point);
             timeLabel.ForeColor = Color.White;
@@ -88,8 +90,9 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.Image = Properties.Resources.play_button2;
-            pictureBox1.Location = new Point(535, 100);
+            pictureBox1.Location = new Point(555, 69);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(361, 367);
             pictureBox1.TabIndex = 4;
@@ -114,6 +117,7 @@
             // 
             // restTextLabel
             // 
+            restTextLabel.Anchor = AnchorStyles.Bottom;
             restTextLabel.AutoSize = true;
             restTextLabel.Font = new Font("Segoe UI", 80F, FontStyle.Regular, GraphicsUnit.Point);
             restTextLabel.ForeColor = Color.Gold;
@@ -125,6 +129,7 @@
             // 
             // cleanResultLabel
             // 
+            cleanResultLabel.Anchor = AnchorStyles.Left;
             cleanResultLabel.AutoSize = true;
             cleanResultLabel.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             cleanResultLabel.ForeColor = SystemColors.ButtonHighlight;
@@ -136,6 +141,7 @@
             // 
             // cleanAndPressLabel
             // 
+            cleanAndPressLabel.Anchor = AnchorStyles.Left;
             cleanAndPressLabel.AutoSize = true;
             cleanAndPressLabel.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             cleanAndPressLabel.ForeColor = SystemColors.ButtonHighlight;
@@ -147,6 +153,7 @@
             // 
             // jerkResultLabel
             // 
+            jerkResultLabel.Anchor = AnchorStyles.Left;
             jerkResultLabel.AutoSize = true;
             jerkResultLabel.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             jerkResultLabel.ForeColor = SystemColors.ButtonHighlight;
@@ -158,6 +165,7 @@
             // 
             // halfSnatchResultLabel
             // 
+            halfSnatchResultLabel.Anchor = AnchorStyles.Left;
             halfSnatchResultLabel.AutoSize = true;
             halfSnatchResultLabel.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             halfSnatchResultLabel.ForeColor = SystemColors.ButtonHighlight;
@@ -169,6 +177,7 @@
             // 
             // pushPressResultLabel
             // 
+            pushPressResultLabel.Anchor = AnchorStyles.Left;
             pushPressResultLabel.AutoSize = true;
             pushPressResultLabel.Font = new Font("Segoe UI", 17F, FontStyle.Regular, GraphicsUnit.Point);
             pushPressResultLabel.ForeColor = SystemColors.ButtonHighlight;
@@ -180,6 +189,7 @@
             // 
             // exerciseLabel
             // 
+            exerciseLabel.Anchor = AnchorStyles.Left;
             exerciseLabel.AutoSize = true;
             exerciseLabel.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             exerciseLabel.ForeColor = Color.Gold;
@@ -191,6 +201,7 @@
             // 
             // pentathlonNewButton
             // 
+            pentathlonNewButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             pentathlonNewButton.BackColor = SystemColors.ActiveCaptionText;
             pentathlonNewButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             pentathlonNewButton.ForeColor = SystemColors.ButtonHighlight;
@@ -204,6 +215,7 @@
             // 
             // pentathlonCloseButton
             // 
+            pentathlonCloseButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             pentathlonCloseButton.BackColor = SystemColors.ActiveCaptionText;
             pentathlonCloseButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             pentathlonCloseButton.ForeColor = SystemColors.ButtonHighlight;

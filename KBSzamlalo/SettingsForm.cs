@@ -2,8 +2,8 @@
 {
     public partial class SettingsForm : Form
     {
-        bool defSoundSettings = Settings.SoundOn;
-        bool defTimingSettings = Settings.StopWatch;
+        private bool defSoundSettings = Settings.SoundOn;
+        private bool defTimingSettings = Settings.StopWatch;
 
         public SettingsForm()
         {

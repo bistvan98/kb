@@ -42,7 +42,6 @@
             plusRestButton = new Button();
             plusWorkButton = new Button();
             nameLabel = new Label();
-            saveLabel = new Label();
             saveNameTextBox = new TextBox();
             rowCounterLabel = new Label();
             id1Label = new Label();
@@ -85,6 +84,7 @@
             cancelButton = new Button();
             openFileDialog1 = new OpenFileDialog();
             sprintPictureBox = new PictureBox();
+            saveButton = new Button();
             ((System.ComponentModel.ISupportInitialize)xPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)downArrow1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)downArrow2).BeginInit();
@@ -120,6 +120,7 @@
             // 
             // customLoadButton
             // 
+            customLoadButton.Anchor = AnchorStyles.Left;
             customLoadButton.BackColor = SystemColors.ActiveCaptionText;
             customLoadButton.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             customLoadButton.ForeColor = SystemColors.ButtonHighlight;
@@ -133,6 +134,7 @@
             // 
             // customNewLabel
             // 
+            customNewLabel.Anchor = AnchorStyles.Left;
             customNewLabel.AutoSize = true;
             customNewLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             customNewLabel.ForeColor = Color.White;
@@ -144,6 +146,7 @@
             // 
             // customTimeLabel
             // 
+            customTimeLabel.Anchor = AnchorStyles.Left;
             customTimeLabel.AutoSize = true;
             customTimeLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             customTimeLabel.ForeColor = Color.White;
@@ -155,6 +158,7 @@
             // 
             // customHourTextBox
             // 
+            customHourTextBox.Anchor = AnchorStyles.Left;
             customHourTextBox.BackColor = Color.Black;
             customHourTextBox.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             customHourTextBox.ForeColor = Color.White;
@@ -167,6 +171,7 @@
             // 
             // customMinutesTextBox
             // 
+            customMinutesTextBox.Anchor = AnchorStyles.Left;
             customMinutesTextBox.BackColor = Color.Black;
             customMinutesTextBox.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             customMinutesTextBox.ForeColor = Color.White;
@@ -179,6 +184,7 @@
             // 
             // doublePointLabel
             // 
+            doublePointLabel.Anchor = AnchorStyles.Left;
             doublePointLabel.AutoSize = true;
             doublePointLabel.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
             doublePointLabel.ForeColor = Color.White;
@@ -190,6 +196,7 @@
             // 
             // xPictureBox
             // 
+            xPictureBox.Anchor = AnchorStyles.Left;
             xPictureBox.BorderStyle = BorderStyle.FixedSingle;
             xPictureBox.Image = Properties.Resources.black;
             xPictureBox.Location = new Point(385, 214);
@@ -201,6 +208,7 @@
             // 
             // intervallLabel
             // 
+            intervallLabel.Anchor = AnchorStyles.Left;
             intervallLabel.AutoSize = true;
             intervallLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             intervallLabel.ForeColor = Color.White;
@@ -212,6 +220,7 @@
             // 
             // roundsLabel
             // 
+            roundsLabel.Anchor = AnchorStyles.Left;
             roundsLabel.AutoSize = true;
             roundsLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             roundsLabel.ForeColor = Color.White;
@@ -223,6 +232,7 @@
             // 
             // roundsTextBox
             // 
+            roundsTextBox.Anchor = AnchorStyles.Left;
             roundsTextBox.BackColor = Color.Black;
             roundsTextBox.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             roundsTextBox.ForeColor = Color.White;
@@ -236,6 +246,7 @@
             // 
             // plusRestButton
             // 
+            plusRestButton.Anchor = AnchorStyles.Left;
             plusRestButton.BackColor = SystemColors.ActiveCaptionText;
             plusRestButton.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             plusRestButton.ForeColor = SystemColors.ButtonHighlight;
@@ -249,6 +260,7 @@
             // 
             // plusWorkButton
             // 
+            plusWorkButton.Anchor = AnchorStyles.Left;
             plusWorkButton.BackColor = SystemColors.ActiveCaptionText;
             plusWorkButton.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             plusWorkButton.ForeColor = SystemColors.ButtonHighlight;
@@ -262,41 +274,31 @@
             // 
             // nameLabel
             // 
+            nameLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             nameLabel.AutoSize = true;
-            nameLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            nameLabel.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             nameLabel.ForeColor = Color.White;
-            nameLabel.Location = new Point(50, 541);
+            nameLabel.Location = new Point(52, 541);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(66, 25);
+            nameLabel.Size = new Size(76, 30);
             nameLabel.TabIndex = 28;
             nameLabel.Text = "Name:";
             nameLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // saveLabel
-            // 
-            saveLabel.AutoSize = true;
-            saveLabel.BorderStyle = BorderStyle.FixedSingle;
-            saveLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            saveLabel.ForeColor = Color.White;
-            saveLabel.Location = new Point(50, 580);
-            saveLabel.Name = "saveLabel";
-            saveLabel.Size = new Size(53, 27);
-            saveLabel.TabIndex = 29;
-            saveLabel.Text = "Save";
-            saveLabel.TextAlign = ContentAlignment.MiddleCenter;
-            saveLabel.Click += saveLabel_Click;
-            // 
             // saveNameTextBox
             // 
+            saveNameTextBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             saveNameTextBox.BackColor = Color.Black;
+            saveNameTextBox.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             saveNameTextBox.ForeColor = Color.White;
-            saveNameTextBox.Location = new Point(134, 541);
+            saveNameTextBox.Location = new Point(153, 542);
             saveNameTextBox.Name = "saveNameTextBox";
-            saveNameTextBox.Size = new Size(366, 23);
+            saveNameTextBox.Size = new Size(347, 32);
             saveNameTextBox.TabIndex = 30;
             // 
             // rowCounterLabel
             // 
+            rowCounterLabel.Anchor = AnchorStyles.Left;
             rowCounterLabel.AutoSize = true;
             rowCounterLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             rowCounterLabel.ForeColor = Color.White;
@@ -308,6 +310,7 @@
             // 
             // id1Label
             // 
+            id1Label.Anchor = AnchorStyles.Left;
             id1Label.AutoSize = true;
             id1Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             id1Label.ForeColor = Color.White;
@@ -319,6 +322,7 @@
             // 
             // id2Label
             // 
+            id2Label.Anchor = AnchorStyles.Left;
             id2Label.AutoSize = true;
             id2Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             id2Label.ForeColor = Color.White;
@@ -330,6 +334,7 @@
             // 
             // id3Label
             // 
+            id3Label.Anchor = AnchorStyles.Left;
             id3Label.AutoSize = true;
             id3Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             id3Label.ForeColor = Color.White;
@@ -341,6 +346,7 @@
             // 
             // id4Label
             // 
+            id4Label.Anchor = AnchorStyles.Left;
             id4Label.AutoSize = true;
             id4Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             id4Label.ForeColor = Color.White;
@@ -352,6 +358,7 @@
             // 
             // time1Label
             // 
+            time1Label.Anchor = AnchorStyles.Left;
             time1Label.AutoSize = true;
             time1Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             time1Label.ForeColor = Color.White;
@@ -363,6 +370,7 @@
             // 
             // time2Label
             // 
+            time2Label.Anchor = AnchorStyles.Left;
             time2Label.AutoSize = true;
             time2Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             time2Label.ForeColor = Color.White;
@@ -374,6 +382,7 @@
             // 
             // time3Label
             // 
+            time3Label.Anchor = AnchorStyles.Left;
             time3Label.AutoSize = true;
             time3Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             time3Label.ForeColor = Color.White;
@@ -385,6 +394,7 @@
             // 
             // time4Label
             // 
+            time4Label.Anchor = AnchorStyles.Left;
             time4Label.AutoSize = true;
             time4Label.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             time4Label.ForeColor = Color.White;
@@ -396,6 +406,7 @@
             // 
             // downArrow1
             // 
+            downArrow1.Anchor = AnchorStyles.Left;
             downArrow1.BorderStyle = BorderStyle.FixedSingle;
             downArrow1.Image = Properties.Resources.downArrow;
             downArrow1.Location = new Point(280, 330);
@@ -407,6 +418,7 @@
             // 
             // downArrow2
             // 
+            downArrow2.Anchor = AnchorStyles.Left;
             downArrow2.BorderStyle = BorderStyle.FixedSingle;
             downArrow2.Image = Properties.Resources.downArrow;
             downArrow2.Location = new Point(280, 380);
@@ -418,6 +430,7 @@
             // 
             // downArrow3
             // 
+            downArrow3.Anchor = AnchorStyles.Left;
             downArrow3.BorderStyle = BorderStyle.FixedSingle;
             downArrow3.Image = Properties.Resources.downArrow;
             downArrow3.Location = new Point(280, 430);
@@ -429,6 +442,7 @@
             // 
             // downArrow4
             // 
+            downArrow4.Anchor = AnchorStyles.Left;
             downArrow4.BorderStyle = BorderStyle.FixedSingle;
             downArrow4.Image = Properties.Resources.downArrow;
             downArrow4.Location = new Point(280, 480);
@@ -440,6 +454,7 @@
             // 
             // upArrow1
             // 
+            upArrow1.Anchor = AnchorStyles.Left;
             upArrow1.BorderStyle = BorderStyle.FixedSingle;
             upArrow1.Image = Properties.Resources.upArrow;
             upArrow1.Location = new Point(345, 330);
@@ -451,6 +466,7 @@
             // 
             // upArrow2
             // 
+            upArrow2.Anchor = AnchorStyles.Left;
             upArrow2.BorderStyle = BorderStyle.FixedSingle;
             upArrow2.Image = Properties.Resources.upArrow;
             upArrow2.Location = new Point(345, 380);
@@ -462,6 +478,7 @@
             // 
             // upArrow3
             // 
+            upArrow3.Anchor = AnchorStyles.Left;
             upArrow3.BorderStyle = BorderStyle.FixedSingle;
             upArrow3.Image = Properties.Resources.upArrow;
             upArrow3.Location = new Point(345, 430);
@@ -473,6 +490,7 @@
             // 
             // upArrow4
             // 
+            upArrow4.Anchor = AnchorStyles.Left;
             upArrow4.BorderStyle = BorderStyle.FixedSingle;
             upArrow4.Image = Properties.Resources.upArrow;
             upArrow4.Location = new Point(345, 480);
@@ -484,6 +502,7 @@
             // 
             // duplicate1
             // 
+            duplicate1.Anchor = AnchorStyles.Left;
             duplicate1.BorderStyle = BorderStyle.FixedSingle;
             duplicate1.Image = Properties.Resources.duplicate;
             duplicate1.Location = new Point(410, 330);
@@ -495,6 +514,7 @@
             // 
             // duplicate2
             // 
+            duplicate2.Anchor = AnchorStyles.Left;
             duplicate2.BorderStyle = BorderStyle.FixedSingle;
             duplicate2.Image = Properties.Resources.duplicate;
             duplicate2.Location = new Point(410, 380);
@@ -506,6 +526,7 @@
             // 
             // duplicate3
             // 
+            duplicate3.Anchor = AnchorStyles.Left;
             duplicate3.BorderStyle = BorderStyle.FixedSingle;
             duplicate3.Image = Properties.Resources.duplicate;
             duplicate3.Location = new Point(410, 430);
@@ -517,6 +538,7 @@
             // 
             // duplicate4
             // 
+            duplicate4.Anchor = AnchorStyles.Left;
             duplicate4.BorderStyle = BorderStyle.FixedSingle;
             duplicate4.Image = Properties.Resources.duplicate;
             duplicate4.Location = new Point(410, 480);
@@ -528,6 +550,7 @@
             // 
             // remove1
             // 
+            remove1.Anchor = AnchorStyles.Left;
             remove1.BorderStyle = BorderStyle.FixedSingle;
             remove1.Image = Properties.Resources.remove;
             remove1.Location = new Point(475, 330);
@@ -539,6 +562,7 @@
             // 
             // remove2
             // 
+            remove2.Anchor = AnchorStyles.Left;
             remove2.BorderStyle = BorderStyle.FixedSingle;
             remove2.Image = Properties.Resources.remove;
             remove2.Location = new Point(475, 380);
@@ -550,6 +574,7 @@
             // 
             // remove3
             // 
+            remove3.Anchor = AnchorStyles.Left;
             remove3.BorderStyle = BorderStyle.FixedSingle;
             remove3.Image = Properties.Resources.remove;
             remove3.Location = new Point(475, 430);
@@ -561,6 +586,7 @@
             // 
             // remove4
             // 
+            remove4.Anchor = AnchorStyles.Left;
             remove4.BorderStyle = BorderStyle.FixedSingle;
             remove4.Image = Properties.Resources.remove;
             remove4.Location = new Point(475, 480);
@@ -572,6 +598,7 @@
             // 
             // testMinTextBox
             // 
+            testMinTextBox.Anchor = AnchorStyles.Left;
             testMinTextBox.BackColor = Color.Black;
             testMinTextBox.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             testMinTextBox.ForeColor = Color.White;
@@ -584,6 +611,7 @@
             // 
             // testSecTextBox
             // 
+            testSecTextBox.Anchor = AnchorStyles.Left;
             testSecTextBox.BackColor = Color.Black;
             testSecTextBox.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             testSecTextBox.ForeColor = Color.White;
@@ -596,6 +624,7 @@
             // 
             // typeLabel1
             // 
+            typeLabel1.Anchor = AnchorStyles.Left;
             typeLabel1.AutoSize = true;
             typeLabel1.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             typeLabel1.ForeColor = Color.White;
@@ -607,6 +636,7 @@
             // 
             // typeLabel2
             // 
+            typeLabel2.Anchor = AnchorStyles.Left;
             typeLabel2.AutoSize = true;
             typeLabel2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             typeLabel2.ForeColor = Color.White;
@@ -618,6 +648,7 @@
             // 
             // typeLabel3
             // 
+            typeLabel3.Anchor = AnchorStyles.Left;
             typeLabel3.AutoSize = true;
             typeLabel3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             typeLabel3.ForeColor = Color.White;
@@ -629,6 +660,7 @@
             // 
             // typeLabel4
             // 
+            typeLabel4.Anchor = AnchorStyles.Left;
             typeLabel4.AutoSize = true;
             typeLabel4.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             typeLabel4.ForeColor = Color.White;
@@ -640,6 +672,7 @@
             // 
             // bottomLineLabel
             // 
+            bottomLineLabel.Anchor = AnchorStyles.Left;
             bottomLineLabel.BorderStyle = BorderStyle.Fixed3D;
             bottomLineLabel.ForeColor = Color.White;
             bottomLineLabel.Location = new Point(50, 516);
@@ -649,6 +682,7 @@
             // 
             // topLineLabel
             // 
+            topLineLabel.Anchor = AnchorStyles.Left;
             topLineLabel.BorderStyle = BorderStyle.Fixed3D;
             topLineLabel.ForeColor = Color.White;
             topLineLabel.Location = new Point(50, 320);
@@ -658,6 +692,7 @@
             // 
             // moveListUpPic
             // 
+            moveListUpPic.Anchor = AnchorStyles.Left;
             moveListUpPic.BorderStyle = BorderStyle.FixedSingle;
             moveListUpPic.Image = Properties.Resources.upArrow;
             moveListUpPic.Location = new Point(529, 330);
@@ -669,6 +704,7 @@
             // 
             // moveListDownPic
             // 
+            moveListDownPic.Anchor = AnchorStyles.Left;
             moveListDownPic.BorderStyle = BorderStyle.FixedSingle;
             moveListDownPic.Image = Properties.Resources.downArrow;
             moveListDownPic.Location = new Point(529, 480);
@@ -680,6 +716,7 @@
             // 
             // addNewLabel
             // 
+            addNewLabel.Anchor = AnchorStyles.Left;
             addNewLabel.AutoSize = true;
             addNewLabel.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
             addNewLabel.ForeColor = Color.White;
@@ -691,6 +728,7 @@
             // 
             // dotsLabel
             // 
+            dotsLabel.Anchor = AnchorStyles.Left;
             dotsLabel.AutoSize = true;
             dotsLabel.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             dotsLabel.ForeColor = Color.White;
@@ -702,6 +740,7 @@
             // 
             // addNewButton
             // 
+            addNewButton.Anchor = AnchorStyles.Left;
             addNewButton.BackColor = SystemColors.ActiveCaptionText;
             addNewButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             addNewButton.ForeColor = SystemColors.ButtonHighlight;
@@ -715,6 +754,7 @@
             // 
             // cancelButton
             // 
+            cancelButton.Anchor = AnchorStyles.Left;
             cancelButton.BackColor = SystemColors.ActiveCaptionText;
             cancelButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cancelButton.ForeColor = SystemColors.ButtonHighlight;
@@ -732,6 +772,7 @@
             // 
             // sprintPictureBox
             // 
+            sprintPictureBox.Anchor = AnchorStyles.None;
             sprintPictureBox.Image = Properties.Resources.play_button2;
             sprintPictureBox.Location = new Point(760, 111);
             sprintPictureBox.Name = "sprintPictureBox";
@@ -740,12 +781,27 @@
             sprintPictureBox.TabStop = false;
             sprintPictureBox.Click += sprintPictureBox_Click;
             // 
+            // saveButton
+            // 
+            saveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            saveButton.BackColor = SystemColors.ActiveCaptionText;
+            saveButton.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            saveButton.ForeColor = SystemColors.ButtonHighlight;
+            saveButton.Location = new Point(28, 583);
+            saveButton.Name = "saveButton";
+            saveButton.Size = new Size(118, 37);
+            saveButton.TabIndex = 76;
+            saveButton.Text = "Save";
+            saveButton.UseVisualStyleBackColor = false;
+            saveButton.Click += saveButton_Click;
+            // 
             // CustomForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1284, 641);
+            Controls.Add(saveButton);
             Controls.Add(sprintPictureBox);
             Controls.Add(cancelButton);
             Controls.Add(addNewButton);
@@ -787,7 +843,6 @@
             Controls.Add(id1Label);
             Controls.Add(rowCounterLabel);
             Controls.Add(saveNameTextBox);
-            Controls.Add(saveLabel);
             Controls.Add(nameLabel);
             Controls.Add(plusWorkButton);
             Controls.Add(plusRestButton);
@@ -845,7 +900,6 @@
         private Button plusRestButton;
         private Button plusWorkButton;
         private Label nameLabel;
-        private Label saveLabel;
         private TextBox saveNameTextBox;
         private Label rowCounterLabel;
         private Label id1Label;
@@ -889,5 +943,6 @@
         private Button cancelButton;
         private OpenFileDialog openFileDialog1;
         private PictureBox sprintPictureBox;
+        private Button saveButton;
     }
 }

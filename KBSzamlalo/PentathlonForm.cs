@@ -13,8 +13,9 @@ namespace KBSzamlalo
         private int DivideNumber;
         private bool FirstCountdown;
         private bool IsRest;
-        int[] scores = new int[5];
-        string[] exerciseName = new string[] { "clean", "clean and press", "jerk", "half snatch", "push press" };
+        private int[] scores = new int[5];
+        private string[] exerciseName = new string[] { "clean", "clean and press", "jerk", "half snatch", "push press" };
+        private Point defPoint = new Point();
 
         public PentathlonForm(bool type)
         {
@@ -78,13 +79,16 @@ namespace KBSzamlalo
                                 break;
                         }
 
-                        if (Convert.ToInt32(countLabel.Text) >= 100)
+                        if (Convert.ToInt32(countLabel.Text) >= 100 && Convert.ToInt32(countLabel.Text) - 1 < 100)
                         {
-                            countLabel.Location = new Point(497, 81);
+                            Point p = new Point(countLabel.Location.X - 70, countLabel.Location.Y);
+                            countLabel.Location = p;
                         }
-                        else if (Convert.ToInt32(countLabel.Text) >= 10)
+                        else if (Convert.ToInt32(countLabel.Text) >= 10 && Convert.ToInt32(countLabel.Text) - 1 < 10)
                         {
-                            countLabel.Location = new Point(535, 81);
+                            defPoint = new Point(countLabel.Location.X, countLabel.Location.Y);
+                            Point p = new Point(countLabel.Location.X - 70, countLabel.Location.Y);
+                            countLabel.Location = p;
                         }
 
                         break;
@@ -128,13 +132,16 @@ namespace KBSzamlalo
                                 break;
                         }
 
-                        if (Convert.ToInt32(countLabel.Text) >= 100)
+                        if (Convert.ToInt32(countLabel.Text) >= 100 && Convert.ToInt32(countLabel.Text) - 1 < 100)
                         {
-                            countLabel.Location = new Point(497, 81);
+                            Point p = new Point(countLabel.Location.X - 70, countLabel.Location.Y);
+                            countLabel.Location = p;
                         }
-                        else if (Convert.ToInt32(countLabel.Text) >= 10)
+                        else if (Convert.ToInt32(countLabel.Text) >= 10 && Convert.ToInt32(countLabel.Text) - 1 < 10)
                         {
-                            countLabel.Location = new Point(535, 81);
+                            defPoint = new Point(countLabel.Location.X, countLabel.Location.Y);
+                            Point p = new Point(countLabel.Location.X - 70, countLabel.Location.Y);
+                            countLabel.Location = p;
                         }
 
                         break;
@@ -144,13 +151,15 @@ namespace KBSzamlalo
                             countLabel.Text = Convert.ToString(Convert.ToInt32(countLabel.Text) - 1);
                         }
 
-                        if (Convert.ToInt32(countLabel.Text) < 10)
+                        if (Convert.ToInt32(countLabel.Text) < 10 && Convert.ToInt32(countLabel.Text) + 1 > 10)
                         {
-                            countLabel.Location = new Point(623, 81); 
+                            Point p = new Point(countLabel.Location.X + 70, countLabel.Location.Y);
+                            countLabel.Location = p;
                         }
-                        else if (Convert.ToInt32(countLabel.Text) < 100)
+                        else if (Convert.ToInt32(countLabel.Text) < 100 && Convert.ToInt32(countLabel.Text) + 1 > 100)
                         {
-                            countLabel.Location = new Point(535, 81);
+                            Point p = new Point(countLabel.Location.X + 70, countLabel.Location.Y);
+                            countLabel.Location = p;
                         }
 
                         break;
@@ -358,6 +367,7 @@ namespace KBSzamlalo
             countLabel.Hide();
             countLabel.Text = "0";
             timeLabel.Hide();
+            countLabel.Location = defPoint;
         }
 
         // Starts the resting phase
@@ -469,6 +479,10 @@ namespace KBSzamlalo
                 pentathlonLabel.Text = "Half pentathlon - 3'/2'";
             }
 
+            defPoint = new Point(countLabel.Location.X, countLabel.Location.Y);
+
+            restTimeLabel.Anchor = AnchorStyles.None;
+
             exerciseLabel.Hide();
 
             cleanResultLabel.Hide();
@@ -504,7 +518,7 @@ namespace KBSzamlalo
         // Close the form with a button
         private void pentathlonCloseButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
         }
 
         // Closes the form, loads the main form

@@ -1,0 +1,51 @@
+Négy fő gomb + a beállítások:
+-Pentathlon - 6'/5': A play gombra kattintva elindul a pentathlon a következő beállításokkal:
+	1: 5 másodperces felkészülési visszaszámlálás sárga színnel
+	2: 6 perc clean (max 120 db)
+	3: 5 perc pihenő idő
+	4: 6 perc clean&press (max 60 db)
+	5: 5 perc pihenő idő
+	6: 6 perc jerk (max 120 db)
+	7: 5 perc pihenő idő
+	8: 6 perc half snatch (max 108 db)
+	9: 5 perc pihenő idő
+	10: 6 perc push press (max 120 db)
+	11: eredmények kiírása, new és close gombok megjelenése
+A számlálót a fel nyíllal és a space billentyűvel lehet növelni, a le nyíllal csökkenteni (a szám nem mehet 0 alá és a max felé)
+A bal alsó sarokban mindig jelzi a jelenlegi feladatot, pihenő időben kiírja az éppen befejezett feladat pontszámát
+A legvégén a close gombra kattintva bezárja a felületet, megjelenik a fő felület
+A new gombra kattintva új pentathlon 6'/5' indítható (a play gombos felület jelenik meg, nem indul egyből)
+
+-Half pentathlon - 3'/2': Ugyanúgy működik, mint a teljes pentathlon, csak az idő és a max darabszámok változnak
+Idők: feladatra 3 perc, pihenésre 2 perc. Az 5 másodperces kezdő felkészülési visszaszámlálás itt is megjelenik.
+Max darabszámok itt:
+	1: clean 60
+	2: clean&press 30
+	3: jerk 60
+	4: half snatch 54
+	5: push press 60
+
+-Spint: A sprint a Sprint - 3', illetve a mellette lévő oszlopban lévő szám gombokra kattintva indítható el.
+Alap: 3 perc, szám gombok: 5, 10, 12, 30 és 60 perc. A play gombra kattintva elindul az 5 másodperces felkészülési visszaszámlálás, majd a teljes idő. A pontszám a fel és space gombokkal növelhető, le nyíllal csökkenthető. A pont nem lehet kisebb, mint 0, maximális érték nincs megadva. Az idő lejárta után a pontszám nem változtatható, a pontszám megjlenik a kijelzőn,
+illetve megjelenik a new és a close gomb. A close gombra kattintva bezárja  afelületet, megjelenik a fő felület. A new gombra kattintva új sprint indítható az előző beállításokkal )a play gomb jelenik meg, nem idnul egyből).
+
+-Settings: a settings feliratra vagy a fogaskerekekre kattintva jelenik meg. Módosítható az időmérés típusa (stopwatch: 0-tól számol felfelé, countdown: max időről számol 0-ig). Bekapcsolható itt a hang is, ami egy síp hangot játszik le minden feladat elkezdésekor. A módosítása a beállítások közötti switch-re kattintva módosítható. A ctrl+c kombináció lenyomásával mentés nélkül kilép a felületről, bármilyen más kilépés esetén menti a változtatásokat.
+
+!!!! A síp hangot csak akkor tudja lejátszani, ha az exe fájl mappájában található egy whistle.wav fájl. Alapból raktam be egyet, ez módosítható másik fájlra is, ha a név egyezik, de csak .wav kitejesztésű lehet. Ha rossz fájl van megadva, attól még működnie kellene a programnak, de nem lesz lejátszva hang.!!!!
+
+-Custom: Egyedi feladat készíthető itt. Ha az intervall checkbox nincs kijelölve, akkor elég az idő mezőket kitölteni, majd a play gombra kattintva elindítható. Ebben az esetben az idő mezőket úgy kell kitölteni, hogy legalább az egyik tartalmazzon egy 0-nál nagyobb számot. Az üres mezőt automatikusan 0-nak fogja számítani. Ha a form nincs megfelelően kitöltve, akkor ezt egy message box jelzi, a feladat nem indítható el.
+
+Az intervall checkbox kijelölése esetén megjelennek a +rest, +work gombok, a rounds mező, illetve egy lista helye. A +rest, +work gombokra kattintva új sor adható a listához a választott típusból. A hozzáadás az ekkor megejelenő felület kitöltésével lehetséges (csak az időt kell megadni, két box: perc, másodperc). Az add new gombra kattintva hozzáadja, a cancel gombra kattintva nem adja hozzá.
+
+!!!!!!! Addig nem indítható el egy feladat, amíg egy hozzáadás folymatban van. Vgay hozzá kell adni, vagy a cancel gombra kattintani ilyenkor.!!!!!
+
+Hozzáadás esetén megjelenik a listában az új sor. A lsita egyszerre 4 elemet tud mutatni. Ha az első négy hely megtelt, akkor az új elemeket az 5., 6., stb... helyekre rakja. Ezek először nem láthatóak, de a lista jobb oldalán lévő fel és le nyílra kattintva a lista mozgatható, így ellenőrizhető. Ha a list első eleme a valódi első elem, akkor a fel gombra kattintva nem történik változás (ugyanígy a le gombra kattintva az utolsó elem esetén). A listában az elemek mellett lévő fel-le gombokra kattintva az elemek helye módosítható a listában 1-el (ez többször ismételhető). Ha az elem már az első/utolsó helyen van, akkor a gombra kattintva nem történik mozgatás. A nyilak mellett található a duplikálás gomb, ez a megadott sort másolja, a másolatot a lista végére illeszti be. Az utolsó gomb a törlés gomb. A gombra kattintva törli a sorban található elemet, majd utána rendezi a listát
+(pl.: 6 elem van, törlöm a harmadikat, akkor a harmadik helyére kerül a negyedik, a negyedik helyére az ötödik stb...). Ha az utolsó elem kerül törlésre, akkor, ha lehetésges a listán mozgat egyet, hogy mind a négy hely ki legyen töltve. A +work gomb mellett található egy rows felirat is, ami az eddig hozzáadott sorokat számolja.
+
+Az egyedi feladat menthető is a save gombra kattintva. A mentéshez minden szükséges adatot meg kell adni helyesen, nem lehet sorhozzáadás közben menteni, illetve kell egy nevet adni a mentésnek. Intervall esetén nem szükséges kitölteni a time mezőket a mentéshez, de a rounds-ot igen (alapesetben 1 a rounds). Nem intervall esetén akkor is menthető nem intervallosként, ha a checkbox ki van jelölve, de nem lehet 1 sor sem hozzáadva. Ha 1 sor is hozzá van adva, akkor intervallosként menti. A checkbox jelölés kivétele esetén a sorok nem tűnnek el, de így is indítható nem intervallos feladat. Intervallos esetén kötelező megadni az időt. A mentés egy xml file-t hoz létre az exe mappájában a megadott névvel. Az xml fájlt ezután bárhova el lehet helyezni. Mentés után a felületet nullázza a program.
+
+A load gombra kattintva betölthető egy xml fájl. A fájl helyét egy tallózó ablakkal adja meg a felhasználó. Az xml fájl helyességét a program nem ellenőrzi, így erre figyelni kell, de a betöltött listán látható lenne egy hibás fájl betöltése. Az xml fájl módosítható, de csak úgy, ahogy a mintában van, különben rossz adatokat tölthet be. A fájl betöltése után betölti az adatokat (kitölti a mezőket, a lsitát stb). Ezután a play gombra kattintva indítható a feladat.
+
+A play gombra kttintva betölt egy új felület. A bal felső sarokban a fájl neve (ha nem volt megadva akkor unnamed custom lesz, nem betöltött fájl esetén is lehet nevet adni, ha a play gombra kattintáskor a save textbox ki volt töltve). Alatta a körök maximális száma, ezalatt pedig listázza a tervet. A close gombra kattintva visszatér az előző felületre. A play gombra kattintva indul az 5 másodperces felkészülési visszaszámlálás, majd elindulnak a számlálások és pontszámítások a megfelelő sorredben. A gombok/kinézet megegyezik a pentathlon/sprint verziókkal. A baloldali listán sárgával kiemeli az éppen futó sort. Alul a close gomb mellett jelzi a köröket. Ha vége a feladatnak, akkor kiírja a lista helyére a pontszámokat. Maxmimális pontszám  nincs megadva egyiknél se, 0-nál nem lehetnek kisebbek. Ha vége a feladatnak, akkor a new gombra kattintva megismételhető.
+
+!!! A program beállításokat a programból való kilépés után nem ment el, viszont újraindítás után is betölthetőek a régebbi xml fájlok. A program nem tárolja a szerzett pontszámokat, újraindítás, visszalépés esetén azok nem lesznek visszakereshetőek!!!!
