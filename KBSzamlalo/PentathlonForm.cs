@@ -151,12 +151,12 @@ namespace KBSzamlalo
                             countLabel.Text = Convert.ToString(Convert.ToInt32(countLabel.Text) - 1);
                         }
 
-                        if (Convert.ToInt32(countLabel.Text) < 10 && Convert.ToInt32(countLabel.Text) + 1 > 10)
+                        if (Convert.ToInt32(countLabel.Text) < 10 && Convert.ToInt32(countLabel.Text) + 1 >= 10)
                         {
                             Point p = new Point(countLabel.Location.X + 70, countLabel.Location.Y);
                             countLabel.Location = p;
                         }
-                        else if (Convert.ToInt32(countLabel.Text) < 100 && Convert.ToInt32(countLabel.Text) + 1 > 100)
+                        else if (Convert.ToInt32(countLabel.Text) < 100 && Convert.ToInt32(countLabel.Text) + 1 >= 100)
                         {
                             Point p = new Point(countLabel.Location.X + 70, countLabel.Location.Y);
                             countLabel.Location = p;
@@ -479,7 +479,7 @@ namespace KBSzamlalo
                 pentathlonLabel.Text = "Half pentathlon - 3'/2'";
             }
 
-            defPoint = new Point(countLabel.Location.X, countLabel.Location.Y);
+            //defPoint = new Point(countLabel.Location.X, countLabel.Location.Y);
 
             restTimeLabel.Anchor = AnchorStyles.None;
 

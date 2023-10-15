@@ -278,12 +278,12 @@ namespace KBSzamlalo
                             customCountLabel.Text = Convert.ToString(Convert.ToInt32(customCountLabel.Text) - 1);
                         }
 
-                        if (Convert.ToInt32(customCountLabel.Text) < 10 && Convert.ToInt32(customCountLabel.Text) + 1 > 10)
+                        if (Convert.ToInt32(customCountLabel.Text) < 10 && Convert.ToInt32(customCountLabel.Text) + 1 >= 10)
                         {
                             Point p = new Point(customCountLabel.Location.X + 70, customCountLabel.Location.Y);
                             customCountLabel.Location = p;
                         }
-                        else if (Convert.ToInt32(customCountLabel.Text) < 100 && Convert.ToInt32(customCountLabel.Text) + 1 > 100)
+                        else if (Convert.ToInt32(customCountLabel.Text) < 100 && Convert.ToInt32(customCountLabel.Text) + 1 >= 100)
                         {
                             Point p = new Point(customCountLabel.Location.X + 70, customCountLabel.Location.Y);
                             customCountLabel.Location = p;

@@ -47,7 +47,6 @@ namespace KBSzamlalo
             FirstCountdown = true;
             CanUseKey = false;
             TotalSeconds = 5;
-            sprintTimeLabel.Location = defPoint;
         }
 
         // Starts the sprint
